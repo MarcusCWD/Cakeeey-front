@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Main from "./pages/Main.js";
+import Products from "./pages/Products.js";
 
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -11,7 +12,7 @@ class App extends React.Component {
       <React.Fragment>
         <Router>
           <div className="ColorMain-bg FontMain text-center">
-            From 01 March to 22 March, enjoy free delivery with a minimum of
+            From 01 May to 22 May, enjoy free delivery with a minimum of
             $100 spent
           </div>
           <nav className="container">
@@ -48,6 +49,7 @@ class App extends React.Component {
             {/* Main route */}
             <Route path="/" element={<Main />} />
             {/* <Route path="/user" element={<User />} /> */}
+            <Route path="/products" element={<Products />} />
           </Routes>
         </Router>
         <div className="display-6 fs-6 ColorMainFooter-bg p-2">

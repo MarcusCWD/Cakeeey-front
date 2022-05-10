@@ -61,6 +61,15 @@
   color: #CFD3C5;
 }
 
+.FontMain-color3{
+  color: #0000;
+}
+
+.nostyle {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .carousel .carousel-item {
   height: 500px;
 }
@@ -107,5 +116,29 @@
   background-position: center;
   background-size: cover;
   transition: all 0.5s ease-in-out !important;
+}
+
+  .image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+ .nav-pills .nav-link:not(.active) {
+    background-color: #FFFCF7;
+    color: black;
+    font-family: 'Lora'
+}
+
+.nav-pills .nav-link:hover{
+  background-color: #CFD3C5;
+  color: white;
+  font-family: 'Lora'
+}
+
+.nav-pills .active{
+  background-color: #CFD3C5 !important;
+  color: white;
+  font-family: 'Lora' 
 }
 

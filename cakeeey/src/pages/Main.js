@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
+import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Main() {
   const [allCakes, setAllCakes] = useState([]);
 
   useEffect(() => {
-    // alert("sdfds")
     const fetchPost = async () => {
       const response = await axios.get(
         "https://cakeeey.herokuapp.com/api/products/cakes"
       );
       setAllCakes(response.data);
-      // console.log(response.data)
     };
     fetchPost();
   }, []);
@@ -64,9 +63,16 @@ export default function Home() {
           >
             FOR YOUR SPECIAL OCCASIONS
           </div>
+          <Link
+           to={"/products"}
+           href="#"
+           className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
+           style={{width:"100px"}}>          
           <button type="button" className="btn BtnMain FontMain">
             SHOP NOW
           </button>
+          </Link>
+
         </div>
         {/* end call to action */}
       </div>
