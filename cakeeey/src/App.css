@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ColorWhite-bg{
+  background-color: #FFFF
+}
+
+.ColorMain-bg{
+  background-color: #CFD3C5
+}
+
+.ColorMainFooter-bg{
+  background-color: #FFFCF7
+}
+
+.FontMain{
+  font-family: 'Lora';
+}
+
+.FontMain-color1{
+    color: #ffff
+}
+
+.FontMain-color2{
+  color: #CFD3C5;
+}
+
+.carousel .carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+.BtnMain{
+  background-color: #CFD3C5;
+  color: #ffff;
+  font-family: 'Lora', serif;
+  font-size: 12px;
+}
+
+.CallToAction{
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  z-index: 5;
+}
+.image {
+  /* width: 200px; */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.3em;
+  border-radius: 0.2em;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+}
+
+.card-block {
+  height: 250px;
+  width: auto;
+  background-color: #fff;
+  border: none;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s ease-in-out !important;
+}
+
