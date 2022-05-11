@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Main from "./pages/Main.js";
 import Products from "./pages/Products.js";
+import Product from "./pages/Product.js"
 
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -50,6 +51,7 @@ class App extends React.Component {
             <Route path="/" element={<Main />} />
             {/* <Route path="/user" element={<User />} /> */}
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:cake_id" element={<Product />} />
           </Routes>
         </Router>
         <div className="display-6 fs-6 ColorMainFooter-bg p-2">

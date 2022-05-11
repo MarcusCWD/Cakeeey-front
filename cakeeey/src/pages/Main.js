@@ -64,15 +64,15 @@ export default function Main() {
             FOR YOUR SPECIAL OCCASIONS
           </div>
           <Link
-           to={"/products"}
-           href="#"
-           className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
-           style={{width:"100px"}}>          
-          <button type="button" className="btn BtnMain FontMain">
-            SHOP NOW
-          </button>
+            to={"/products"}
+            href="#"
+            className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
+            style={{ width: "100px" }}
+          >
+            <button type="button" className="btn BtnMain FontMain">
+              SHOP NOW
+            </button>
           </Link>
-
         </div>
         {/* end call to action */}
       </div>
@@ -85,18 +85,24 @@ export default function Main() {
           {allCakes &&
             allCakes.map((p) => (
               <div className="col-7 col-md-3 col-lg-2 shadow-sm p-3 mb-4 bg-body rounded">
-                <div className="card-block">
-                  <div
-                    className="image"
-                    style={{ backgroundImage: `url(${p.image_url})` }}
-                  ></div>
-                  <p
-                    className="fs-6 fw-bold mt-2 FontMain"
-                    style={{ lineHeight: "1.2" }}
-                  >
-                    {p.name}
-                  </p>
-                </div>
+                <Link
+                  to={"/product/" + p.id}
+                  href="#"
+                  className=" nostyle"
+                >
+                  <div className="card-block">
+                    <div
+                      className="image"
+                      style={{ backgroundImage: `url(${p.image_url})` }}
+                    ></div>
+                    <p
+                      className="fs-6 fw-bold mt-2 FontMain"
+                      style={{ lineHeight: "1.2" }}
+                    >
+                      {p.name}
+                    </p>
+                  </div>
+                </Link>
               </div>
             ))}
         </div>

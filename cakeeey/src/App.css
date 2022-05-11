@@ -142,3 +142,8 @@
   font-family: 'Lora' 
 }
 
+.image-individual {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+}
