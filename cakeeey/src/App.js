@@ -3,9 +3,14 @@ import "./App.css";
 import Main from "./pages/Main.js";
 import Products from "./pages/Products.js";
 import Product from "./pages/Product.js"
+import Login from "./pages/Login.js"
+import Profile from "./pages/Profile.js"
+// Imported Context
+import UserToken from "./pages/UserToken.js";
 
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 class App extends React.Component {
   render() {
@@ -46,13 +51,16 @@ class App extends React.Component {
               </div>
             </div>
           </nav>
-          <Routes>
+          <UserToken>
+             <Routes>
             {/* Main route */}
             <Route path="/" element={<Main />} />
-            {/* <Route path="/user" element={<User />} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:cake_id" element={<Product />} />
           </Routes>
+          </UserToken>
         </Router>
         <div className="display-6 fs-6 ColorMainFooter-bg p-2">
           <p className=" d-flex justify-content-right p-2">

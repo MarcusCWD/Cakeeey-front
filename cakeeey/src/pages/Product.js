@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 export default function Product() {
 
   let { cake_id } = useParams();
-  const arrSize = [];
   const arrIngredient = [];
 
   const [name, setName] = useState("");
@@ -15,8 +14,8 @@ export default function Product() {
 
   const [sizeg, setSize] = useState(
     [{
-      id: "1231231",
-      size: "345345ghjfgh3534",
+      id: "",
+      size: "",
     }]
   );
 
@@ -48,18 +47,19 @@ export default function Product() {
       //if name has been loaded
       
         let haveProduct = response.data[0].products;
+        const arrSize = [];
         for (let i of haveProduct) {
           arrSize.push(i.cakesize);
         }
         setSize(arrSize);
-
+        console.log(arrSize)
         let haveIngredient = response.data[0].ingredients;
         for (let i of haveIngredient) {
           if (!arrIngredient.includes(i.name)) {
             arrIngredient.push(i.name);
           }
         
-        // setSize(arrIngredient);
+        setIngredient(arrIngredient);
       }
 
       //if exist for price we just take the first
@@ -86,14 +86,14 @@ export default function Product() {
         </div>
 
         {/* details of the item */}
-        <div className="col-5">
-          <div className="FontMain" style={{ fontSize: "32px" }}>
+        <div className="col-5 p-2">
+          <div className="FontMain " style={{ fontSize: "32px" }}>
             {name}
           </div>
           <div className="FontMain" style={{ fontSize: "24px" }}>
             {parseFloat(price / 100).toFixed(2)}
           </div>
-          <div className="p-2">
+          <div>
             <label className="drop-down-label-width">Select Cake Size</label>
             <select
               value={sizeg.size}
@@ -106,8 +106,14 @@ export default function Product() {
               ))}
             </select>
           </div>
-          ;{/* description */}
+          <div style={{height:"40px"}}></div>
+          {/* description */}
           <div>{description}</div>
+          {/* ingredient */}
+          <div style={{height:"100px"}}></div>
+          <div>Ingredients: {ingredient && ingredient.map((p) => (
+                <p className="d-inline">{p}, </p>
+              ))}</div>
         </div>
       </div>
     </React.Fragment>

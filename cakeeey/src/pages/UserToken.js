@@ -1,0 +1,84 @@
+import jwt_decode from "jwt-decode";
+import TokenContext from "./TokenContext";
+import React from "react";
+import axios from "axios";
+
+export default class UserToken extends React.Component {
+    state = {
+        user: "",
+    };
+
+    async componentDidMount() {
+        console.log("Component did mount in context");
+        let token = localStorage.getItem("accessToken");
+        if (token) {
+            let tokenExpiry = jwt_decode(token).exp;
+            let currentUnixTime = Math.round(new Date().getTime() / 1000);
+            if (currentUnixTime >= tokenExpiry) {
+                console.log("Access token has expired. Getting a new token now.");
+                // Token has expired, need to refresh
+                const refreshToken = localStorage.getItem("refreshToken");
+                let refreshResponse = await axios.post("https://cakeeey.herokuapp.com/api/user/refresh", {
+                    refreshToken: refreshToken,
+                });
+                localStorage.setItem("accessToken", refreshResponse.data.accessToken);
+                token = refreshResponse.data.accessToken;
+            }
+            let response = await axios.get("https://cakeeey.herokuapp.com/api/user/profile", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            this.setState({
+                user: response.data,
+            });
+        }
+    }
+
+    render = () => {
+
+        const context = {
+            user: this.state.user,
+            updateUser: () => {
+                const internalFunction = async () => {
+                    console.log("Calling update user");
+                    let token = localStorage.getItem("accessToken");
+                    
+                    if (token) {
+                        let tokenExpiry = jwt_decode(token).exp;
+                        let currentUnixTime = Math.round(new Date().getTime() / 1000);
+                        if (currentUnixTime >= tokenExpiry) {
+                            console.log("Access token has expired. Getting a new token now.");
+                            // Token has expired, need to refresh
+                            const refreshToken = localStorage.getItem("refreshToken");
+                            let refreshResponse = await axios.post("https://cakeeey.herokuapp.com/api/user/refresh", {
+                                refreshToken: refreshToken,
+                            });
+                            localStorage.setItem("accessToken", refreshResponse.data.accessToken);
+                            token = refreshResponse.data.accessToken;
+                        }
+                        let response = await axios.get("https://cakeeey.herokuapp.com/api/user/profile", {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            },
+                        });
+                        this.setState({
+                            user: response.data,
+                        });
+                        
+                    }
+                };
+
+                internalFunction();
+            },
+            logoutUser: () => {
+                localStorage.setItem("accessToken", "");
+                localStorage.setItem("refreshToken", "");
+                this.setState({
+                    user: "",
+                });
+            },
+        };
+        return <TokenContext.Provider value={context}>{this.props.children}</TokenContext.Provider>;
+    };
+}
