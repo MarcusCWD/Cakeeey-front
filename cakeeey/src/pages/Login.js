@@ -42,10 +42,10 @@ export default function Login() {
 
     return (
         <React.Fragment>
-               <section className="py-20 bg-light overflow-hidden">
+               <section className="py-20 h-100" >
                 <div className="position-relative container">
                     <div className="position-relative mw-4xl mx-auto">
-                        <div className="position-absolute top-50 start-0 end-0 translate-middle-y bg-info-light ms-n6 me-n6" style={{ height: "90%" }}></div>
+                        <div className="position-absolute top-50 start-0 end-0 translate-middle-y ms-n6 me-n6" ></div>
                         <div className="position-relative py-16 pt-md-32 pb-md-20 px-4 px-sm-8 bg-white">
                             <div className="mw-lg mx-auto text-center">
                                 <div className="d-inline-block h6 mb-14" href="#">

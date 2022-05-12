@@ -40,7 +40,7 @@ class App extends React.Component {
                       width="25px"
                     ></img>
                   </Link>
-                  <Link className="p-1" to="/user">
+                  <Link className="p-1" to="/profile">
                     <img
                       src="/images/user.png"
                       height="25px"
