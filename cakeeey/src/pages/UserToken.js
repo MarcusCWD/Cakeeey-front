@@ -75,13 +75,13 @@ export default class UserToken extends React.Component {
                         });
                         
                     }
-                };
+                }
 
-                internalFunction();
+                return internalFunction()
             },
             logoutUser: () => {
-                localStorage.setItem("accessToken", "");
-                localStorage.setItem("refreshToken", "");
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("refreshToken");
                 this.setState({
                     user: "",
                 });

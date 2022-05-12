@@ -12,16 +12,17 @@ export default function Profile() {
     
     useEffect(() => {
         console.log("usertoken mounted");
-        // first for this profile page render, we check if token is exprired
-        tokenContext.updateUser();
-        // console.log(tokenContext.user)
-
         // if user has logout and there is no token in localstorege,
         //we have to redirect them to login page
         if(!token){
-        navigate("/login")
+            navigate("/login")
         }
-        tokenContext.retriveOrder();
+        // first for this profile page render, we check if token is exprired
+        tokenContext.updateUser().then(()=>{
+            console.log("hello im here")
+            tokenContext.retriveOrder()
+        });
+
     }, []);
 
 
