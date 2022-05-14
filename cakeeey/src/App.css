@@ -101,7 +101,6 @@
   background-size: cover;
   background-position: center;
   border-radius: 0.3em;
-  border-radius: 0.2em;
 }
 
 .scrolling-wrapper {
@@ -117,12 +116,6 @@
   background-size: cover;
   transition: all 0.5s ease-in-out !important;
 }
-
-  .image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
 
  .nav-pills .nav-link:not(.active) {
     background-color: #FFFCF7;
@@ -146,4 +139,22 @@
   height: 600px;
   background-size: cover;
   background-position: center;
+}
+
+.OrderBorder{
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 2px;
+}
+
+.image-order {
+  /* width: 200px; */
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+
+}
+
+.OrderListing{
+  background-color: #FBFBFB
 }

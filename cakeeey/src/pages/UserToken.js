@@ -87,14 +87,24 @@ export default class UserToken extends React.Component {
                 });
             },
             retriveOrder: () =>{
+                
                 const internalFunction = async () => {
                     console.log("Calling retrive orders");
-                    let response = await axios.get("https://cakeeey.herokuapp.com/api/order/"+ this.state.user.id +"/user")
+                    let token = localStorage.getItem("accessToken");
+                    if(token){
+                        let response = await axios.get("https://cakeeey.herokuapp.com/api/order/"+ this.state.user.id +"/user", {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            },
+                        })
                     this.setState({
                         order: response.data
                     })
+                    }
+           
+           
                 }
-                internalFunction()
+                return internalFunction()
 
             }
         };
