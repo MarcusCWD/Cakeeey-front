@@ -78,10 +78,10 @@ export default function Product() {
   
   const addCart = async () => {
      (dataStore[0].products).map((s) => {
-      console.log("s.cakesize_id", s.cakesize_id)
-      console.log("sizeStore_id", sizeStore.id)
+      // console.log("s.cakesize_id", s.cakesize_id)
+      // console.log("sizeStore_id", sizeStore.id)
       if(s.cakesize_id == sizeStore.id){
-        console.log("we have entered this check")
+        // console.log("we have entered this check")
         let response = axios.post("https://cakeeey.herokuapp.com/api/cart/"+  tokenContext.user.id + `/` + s.id + `/add`);
         return response
       } 
@@ -91,7 +91,8 @@ export default function Product() {
 
   const checkIfEmpty = () => {
     // we check if "Choice" aka user did not select any size of cake 
-    if(sizeStore.id != "Choice"){
+    console.log(sizeStore[0])
+    if((sizeStore.id != "Choice") && ((sizeStore[0].id) != "")){
       return <div className="modal-body">Item Added to Cart</div>
     }
     else{
