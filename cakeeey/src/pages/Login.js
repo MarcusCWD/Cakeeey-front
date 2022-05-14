@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -42,7 +41,8 @@ export default function Login() {
 
     return (
         <React.Fragment>
-               <section className="py-20 h-100" >
+               <section className="py-20" style={{height:"600px"}} >
+                   <div style={{height:"100px"}}></div>
                 <div className="position-relative container">
                     <div className="position-relative mw-4xl mx-auto">
                         <div className="position-absolute top-50 start-0 end-0 translate-middle-y ms-n6 me-n6" ></div>

@@ -28,7 +28,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <section className="container-fluid row">
+    <section className="container-fluid row" style={{height:"600px"}}>
       <div className="col-9">
           <div className="mt-2 FontMain" style={{ fontSize: "36px" }}>
         Your Order
@@ -84,9 +84,12 @@ export default function Profile() {
       )}
       </div>
       <div className="col-3 FontMain mt-2">
-      <div style={{fontSize:"24px"}}>My Account
-      <div className="mt-12 mt-md-16 btn btn-dark" onClick={logoutUser}>Logout</div>
-      </div>
+        <div className="d-inline-flex">
+          <div style={{fontSize:"24px"}}>My Account </div>
+          <button type="button" className="btn BtnMain FontMain mx-3" onClick={logoutUser}>Logout</button>
+        </div>
+      
+      
       {tokenContext.order &&
             tokenContext.order.map((p) => (
               <div>

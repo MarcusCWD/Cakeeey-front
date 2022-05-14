@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "../App.css";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import TokenContext from "./TokenContext";
 
 export default function Product() {
-
+  let tokenContext = useContext(TokenContext);
   let { cake_id } = useParams();
   const arrIngredient = [];
+  let token = localStorage.getItem("accessToken");
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-
+  const [dataStore, setDataStore] = useState([]);
   const [sizeg, setSize] = useState(
     [{
       id: "",
@@ -41,8 +42,8 @@ export default function Product() {
     const fetchPost = async () => {
       const response = await axios.get(
         "https://cakeeey.herokuapp.com/api/products/cakes/" + cake_id
-      );
-
+      )
+      setDataStore(response.data)
 
       //if name has been loaded
       
@@ -74,9 +75,33 @@ export default function Product() {
     fetchPost();
   }, []);
 
+  
+  const addCart = async () => {
+     (dataStore[0].products).map((s) => {
+      console.log("s.cakesize_id", s.cakesize_id)
+      console.log("sizeStore_id", sizeStore.id)
+      if(s.cakesize_id == sizeStore.id){
+        console.log("we have entered this check")
+        let response = axios.post("https://cakeeey.herokuapp.com/api/cart/"+  tokenContext.user.id + `/` + s.id + `/add`);
+        return response
+      } 
+    }
+    )
+  }
+
+  const checkIfEmpty = () => {
+    // we check if "Choice" aka user did not select any size of cake 
+    if(sizeStore.id != "Choice"){
+      return <div className="modal-body">Item Added to Cart</div>
+    }
+    else{
+      return <div className="modal-body" style={{color:"red"}}>Please Select a Size</div>
+    }
+  }
+
   return (
     <React.Fragment>
-      <div className="row container">
+      <div className="row container-fluid">
         {/* image */}
         <div className="col-7">
           <div
@@ -101,6 +126,7 @@ export default function Product() {
               onChange={updateFormField}
               className="drop-down-width"
             >
+              <option>Choice</option>
               {sizeg && sizeg.map((p) => (
                 <option value={p.id}>{p.size}</option>
               ))}
@@ -114,6 +140,22 @@ export default function Product() {
           <div>Ingredients: {ingredient && ingredient.map((p) => (
                 <p className="d-inline">{p}, </p>
               ))}</div>
+        {/* modal for cart  */}
+        
+<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={addCart}>
+  Add to Cart
+</button>
+
+
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      
+       {checkIfEmpty()}
+      
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </React.Fragment>
