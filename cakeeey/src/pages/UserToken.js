@@ -7,6 +7,7 @@ export default class UserToken extends React.Component {
     state = {
         user: "",
         order: [],
+        cartItems: [],
     };
     // everytime a user refreshes his page, componenetDidMount will run
     // his browser will already have stored both access and refresh token
@@ -34,10 +35,11 @@ export default class UserToken extends React.Component {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
-            });
+            })
             this.setState({
                 user: response.data,
             });
+
         }
     }
 
@@ -86,7 +88,7 @@ export default class UserToken extends React.Component {
                     user: "",
                 });
             },
-            retriveOrder: () =>{
+            retriveOrder: () => {
                 
                 const internalFunction = async () => {
                     console.log("Calling retrive orders");
@@ -101,12 +103,10 @@ export default class UserToken extends React.Component {
                         order: response.data
                     })
                     }
-           
-           
                 }
                 return internalFunction()
+            },
 
-            }
         };
         return <TokenContext.Provider value={context}>{this.props.children}</TokenContext.Provider>;
     };

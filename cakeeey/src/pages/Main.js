@@ -83,7 +83,7 @@ export default function Main() {
         <div className="display-4 p-3 mx-3 FontMain">Featured Products</div>
         <div className="scrolling-wrapper row flex-row flex-nowrap flex-lg-wrap m-4 pb-2 pt-2 gap-3 gap-lg-4">
           {allCakes &&
-            allCakes.map((p) => (
+            (allCakes.slice(0,8)).map((p) => ( // we limit the cards to show 8 featured items
               <div className="col-7 col-md-3 col-lg-2 shadow-sm p-3 mb-4 bg-body rounded">
                 <Link
                   to={"/product/" + p.id}

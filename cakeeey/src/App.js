@@ -5,6 +5,7 @@ import Products from "./pages/Products.js";
 import Product from "./pages/Product.js"
 import Login from "./pages/Login.js"
 import Profile from "./pages/Profile.js"
+import Cart from "./pages/Cart.js"
 // Imported Context
 import UserToken from "./pages/UserToken.js";
 
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Route path="/profile" element={<Profile />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:cake_id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           </UserToken>
         </Router>

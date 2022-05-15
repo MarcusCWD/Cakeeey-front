@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import TokenContext from "./TokenContext";
-import axios from "axios";
 
 
 export default function Profile() {
@@ -28,8 +27,9 @@ export default function Profile() {
   }, []);
 
   return (
-    <section className="container-fluid row" style={{height:"600px"}}>
-      <div className="col-9">
+    <section className="container">
+      <div className="row">
+    <div className="col-9">
           <div className="mt-2 FontMain" style={{ fontSize: "36px" }}>
         Your Order
       </div>
@@ -46,7 +46,7 @@ export default function Profile() {
                   style={{ fontSize: "24px", color: "#7c7c7c" }}
                 >
                   <div className="m-2">Order Number: {p.id} </div>
-                  {/* <div className="m-2">Status: {p.status.status} </div> */}
+                  <div className="m-2">Status: {p.status.status} </div>
                   <div className="m-2">Date: {p.date.slice(0, 10)} </div>
                 </div>
                 {p.purchases &&
@@ -91,7 +91,7 @@ export default function Profile() {
       
       
       {tokenContext.order &&
-            tokenContext.order.map((p) => (
+            tokenContext.order.slice(0,1).map((p) => (
               <div>
                 <div style={{fontSize:"18px"}}>Name</div>
                 <div>
@@ -102,10 +102,11 @@ export default function Profile() {
                 <div style={{fontSize:"18px"}}>Default address</div>
                 <div>{p.address}</div>
               </div>
-              
 
         ))}
       </div>
+      </div>
+  
     
     </section>
   );
