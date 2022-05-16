@@ -39,6 +39,22 @@ export default function Product() {
     });
   };
 
+  // when sizeg selection by user changes we have to change the price of our order too
+  useEffect(()=>{
+    // console.log("printing datastore",dataStore[0])
+    if(dataStore[0] !== undefined){
+      for(let i of dataStore[0].products){
+        console.log(i)
+      if(sizeStore.id == i.cakesize_id){
+        console.log(i.price)
+        setPrice(i.price)
+      }
+    }
+    }
+
+    console.log("hello world")
+  }, [sizeStore])
+
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
@@ -64,7 +80,7 @@ export default function Product() {
         setIngredient(arrIngredient);
       }
 
-      //if exist for price we just take the first
+      // if exist for price we just take the first
       if (response.data[0].products[0]) {
         setPrice(response.data[0].products[0].price);
       }
