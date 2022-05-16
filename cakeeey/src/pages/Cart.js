@@ -9,6 +9,7 @@ export default function Cart() {
     let navigate = useNavigate();
     let token = localStorage.getItem("accessToken");
     const [cartItems, setCartItems] = useState([])
+    const [priceTotal, setPriceTotal] = useState(0)
 
 
     useEffect(() => {
@@ -28,10 +29,19 @@ export default function Cart() {
         }
       }, []);
 
+      // whenever the state in cart item changes, we know that the user must have modified the qty
+      useEffect(() => {
+        let tempTotal = 0
+        console.log(cartItems)
+        for (let i of (cartItems)){
+          console.log(i.product.price)
+          tempTotal = tempTotal + i.product.price * i.quantity
+        }
+          console.log(tempTotal)
+        setPriceTotal(tempTotal)
+      }, [cartItems]);
+
       
-      const calculateTotal = ()=> {
-        return null
-      }
 
       const incrementQty = async (e) => {
         const productIndex = (cartItems).findIndex(p => p.product_id === parseInt(e.target.name))
@@ -64,7 +74,7 @@ export default function Cart() {
             <div className="row">
                 <div className="col-2 FontMain" style={{fontSize:"32px"}}>Your Cart</div>
                 <div className="col-4"></div>
-                <div className="col-4">Sub Total: $ {calculateTotal}</div>
+                <div className="col-4">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
                 <div className="col-2">
                   <a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.herokuapp.com/api/checkout/` + tokenContext.user.id}>Checkout</a>
                 </div>   
@@ -88,7 +98,7 @@ export default function Cart() {
                   </div>
                 </div>
                 <div className="col-3">
-                  <div>Price:</div>
+                  <div>Individual Price:</div>
                   <div> {parseFloat(p.product.price / 100).toFixed(2)}</div>
                 </div>
                 <div className="col-2">
