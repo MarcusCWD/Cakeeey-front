@@ -6,6 +6,7 @@ import Product from "./pages/Product.js"
 import Login from "./pages/Login.js"
 import Profile from "./pages/Profile.js"
 import Cart from "./pages/Cart.js"
+import Register from "./pages/Register.js"
 // Imported Context
 import UserToken from "./pages/UserToken.js";
 
@@ -19,8 +20,7 @@ class App extends React.Component {
       <React.Fragment>
         <Router>
           <div className="ColorMain-bg FontMain text-center">
-            From 01 May to 22 May, enjoy free delivery with a minimum of
-            $100 spent
+            From 01 May to 22 May, enjoy our special seasonal cakes! 
           </div>
           <nav className="container">
             <div className="ColorWhite-bg">
@@ -61,6 +61,7 @@ class App extends React.Component {
             <Route path="/products" element={<Products />} />
             <Route path="/product/:cake_id" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
           </UserToken>
         </Router>

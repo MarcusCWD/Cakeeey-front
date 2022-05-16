@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "../App.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import TokenContext from "./TokenContext";
 
 export default function Product() {
   let tokenContext = useContext(TokenContext);
+  const navigate = useNavigate();
   let { cake_id } = useParams();
   const arrIngredient = [];
   let token = localStorage.getItem("accessToken");
@@ -90,14 +91,23 @@ export default function Product() {
   }
 
   const checkIfEmpty = () => {
-    // we check if "Choice" aka user did not select any size of cake 
-    console.log(sizeStore[0])
-    if((sizeStore.id != "Choice") && ((sizeStore[0].id) != "")){
-      return <div className="modal-body">Item Added to Cart</div>
+    if(tokenContext.user.id){
+        // we check if "Choice" aka user did not select any size of cake 
+      console.log(sizeStore[0])
+      if((sizeStore.id != "Choice") && ((sizeStore[0].id) != "")){
+        return <div className="modal-body">Item Added to Cart</div>
+      }
+      else{
+        return <div className="modal-body" style={{color:"red"}}>Please Select a Size</div>
+      }
     }
     else{
-      return <div className="modal-body" style={{color:"red"}}>Please Select a Size</div>
-    }
+      return (
+        <div className="modal-body" style={{color:"red"}}>
+          Please login first
+        </div>
+      )
+    } 
   }
 
   return (
@@ -143,20 +153,20 @@ export default function Product() {
               ))}</div>
         {/* modal for cart  */}
         
-<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={addCart}>
-  Add to Cart
-</button>
+        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={addCart}>
+          Add to Cart
+        </button>
 
 
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog">
-    <div className="modal-content">
-      
-       {checkIfEmpty()}
-      
-    </div>
-  </div>
-</div>
+        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              
+              {checkIfEmpty()}
+              
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </React.Fragment>

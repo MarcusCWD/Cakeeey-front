@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Login() {
@@ -79,6 +79,10 @@ export default function Login() {
                                         Login
                                     </div>
                                 </form>
+                                <div className="p-4">
+                                    <Link to='/register' href="#">New? Register here</Link>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

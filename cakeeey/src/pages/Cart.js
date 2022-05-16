@@ -51,16 +51,13 @@ export default function Cart() {
         console.log(cloned[productIndex])
         await axios.post(`https://cakeeey.herokuapp.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity + `/update`)
       } 
-    //   const deleteItem = async (e) => {
-    //     await axios.get(`${baseUrl}/api/cart/${userId}/${e.target.name}/remove`)
-    //     // Get index
-    //     const teaIndex = cartItem.findIndex(p => p.tea.id === parseInt(e.target.name))
-    //     // Clone state
-    //     let cloned = [...cartItem]
-    //     // Remove the tea item using splice
-    //     cloned.splice(teaIndex, 1)
-    //     setCartItem(cloned)
-    // }
+      const deleteItem = async (e) => {
+        await axios.post(`https://cakeeey.herokuapp.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/delete`)
+        const productIndex = cartItems.findIndex(p => p.product_id === parseInt(e.target.name))
+        let cloned = [...cartItems]
+        cloned.splice(productIndex, 1)
+        setCartItems(cloned)
+    }
 
       return (
         <section className="container">
@@ -94,7 +91,18 @@ export default function Cart() {
                   <div>Price:</div>
                   <div> {parseFloat(p.product.price / 100).toFixed(2)}</div>
                 </div>
-                <div className="col-2"></div>
+                <div className="col-2">
+                  <a className="mb-1" href="#">
+                  <img
+                    src="./images/close.png"
+                    style={{ width: "25px" }}
+                    className="m-2 increaseHover"
+                    alt="close button for item in cart"
+                    onClick={deleteItem}
+                    name={p.product_id}
+                    />
+                  </a>
+                </div>
                 <hr></hr>
             </div>
             
