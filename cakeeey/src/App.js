@@ -15,7 +15,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 class App extends React.Component {
+
   render() {
+
+    let searchDrop = () => {
+      
+    }
+
     return (
       <React.Fragment>
         <Router>
@@ -34,6 +40,13 @@ class App extends React.Component {
                   ></img>
                 </Link>
                 <div>
+                  <a href='#' onClick={searchDrop}>
+                    <img
+                      src="/images/search.png"
+                      height="25px"
+                      width="25px"
+                    ></img>
+                  </a>
                   <Link className="p-1" to="/cart">
                     <img
                       src="/images/cart.png"
