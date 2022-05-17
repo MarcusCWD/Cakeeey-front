@@ -7,6 +7,7 @@ import Login from "./pages/Login.js"
 import Profile from "./pages/Profile.js"
 import Cart from "./pages/Cart.js"
 import Register from "./pages/Register.js"
+import Search from "./pages/Search.js"
 // Imported Context
 import UserToken from "./pages/UserToken.js";
 
@@ -18,12 +19,20 @@ import { useState } from "react";
 class App extends React.Component {
   state = {
     clickFlag: false,
+    searchBox: "",
+    clickSearch: false
   };
 
   searchDrop = () => {
     let previousclick = !(this.state.clickFlag)
     this.setState({
       clickFlag: previousclick
+    });
+  };
+
+  updateFormField = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
     });
   };
   
@@ -78,9 +87,11 @@ class App extends React.Component {
                   <div className="position-relative py-16 pt-md-32 pb-md-20 px-4 px-sm-8 bg-white">
                     <div className="mw-lg mx-auto text-center">
                       {/* button search group */}
-                      <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary">search</button>
+                      <div className="input-group">
+                        <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"  value= {this.state.searchBox} name="searchBox" onChange={this.updateFormField}/>
+                        <Link to="/search "href="#">
+                          <button type="button" className="btn btn-outline-primary">search</button>
+                        </Link>
                       </div>
                       {/* end button search group */}
                     </div>
@@ -98,6 +109,7 @@ class App extends React.Component {
             <Route path="/product/:cake_id" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<Search search={this.state.searchBox} />} />
           </Routes>
           </UserToken>
         </Router>

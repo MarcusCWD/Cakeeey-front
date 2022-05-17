@@ -36,14 +36,16 @@ export default class UserToken extends React.Component {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            this.setState({
-                user: response.data,
-            });
-
+            let waitFor =  async () => {
+                this.setState({
+                    user: response.data,
+                });
+            }
+            await waitFor()
         }
     }
 
-    render = () => {
+    render =  () => {
 
         const context = {
             user: this.state.user,
