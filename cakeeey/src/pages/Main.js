@@ -19,7 +19,7 @@ export default function Main() {
   return (
     <React.Fragment>
       {/* start carousel */}
-      <div>
+      <div className="postion-relative">
         <div
           id="carouselLanding"
           className="carousel slide"
@@ -56,23 +56,24 @@ export default function Main() {
           </div>
         </div>
         {/* start call to action */}
-        <div className="CallToAction">
+        <div className="position-absolute top-50 start-50 translate-middle">
           <div
-            className="FontMain-color1 FontMain"
+            className="FontMain-color1 FontMain text-center"
             style={{ fontSize: "36px" }}
           >
             FOR YOUR SPECIAL OCCASIONS
           </div>
+          <div className="justify-content-center d-flex">
           <Link
             to={"/products"}
             href="#"
-            className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
-            style={{ width: "100px" }}
           >
-            <button type="button" className="btn BtnMain FontMain">
+            <a type="button" className="btn btn-lg BtnMain FontMain">
               SHOP NOW
-            </button>
+            </a>
           </Link>
+          </div>
+ 
         </div>
         {/* end call to action */}
       </div>

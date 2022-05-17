@@ -27,7 +27,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <section className="container">
+    <section className="container" style={{minHeight:"400px"}}>
       <div className="row">
     <div className="col-9">
           <div className="mt-2 FontMain" style={{ fontSize: "36px" }}>

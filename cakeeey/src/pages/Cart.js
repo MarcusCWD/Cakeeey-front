@@ -70,7 +70,7 @@ export default function Cart() {
     }
 
       return (
-        <section className="container">
+        <section className="container" style={{minHeight: '400px'}}>
             <div className="row">
                 <div className="col-2 FontMain" style={{fontSize:"32px"}}>Your Cart</div>
                 <div className="col-4"></div>
@@ -113,7 +113,7 @@ export default function Cart() {
                     />
                   </a>
                 </div>
-                <hr></hr>
+                <hr/>
             </div>
             
   

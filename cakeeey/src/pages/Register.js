@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Register() {
+export default function Register(props) {
     const [isPassword, setIsPassword] = useState(true)
     const [isFirstName, setIsFirstName] = useState(true)
     const [isLastName, setIsLastName] = useState(true)
@@ -59,6 +59,7 @@ export default function Register() {
             navigate("/login");
         }
     };
+
 
     // const [errorState, setErrorState] = useState({
     //     errorMessage: "",

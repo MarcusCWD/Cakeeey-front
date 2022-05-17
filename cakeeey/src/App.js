@@ -8,6 +8,7 @@ import Profile from "./pages/Profile.js"
 import Cart from "./pages/Cart.js"
 import Register from "./pages/Register.js"
 import Search from "./pages/Search.js"
+
 // Imported Context
 import UserToken from "./pages/UserToken.js";
 
@@ -20,7 +21,6 @@ class App extends React.Component {
   state = {
     clickFlag: false,
     searchBox: "",
-    clickSearch: false
   };
 
   searchDrop = () => {
@@ -35,38 +35,46 @@ class App extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
+
   
   render() {
+
     return (
       <React.Fragment>
         <Router>
           <div className="ColorMain-bg FontMain text-center">
             From 01 May to 22 May, enjoy our special seasonal cakes! 
           </div>
-          <nav className="container">
-            <div className="ColorWhite-bg">
-              <div className="d-flex justify-content-between p-3">
-                <div></div>
-                <Link className="p-1" to="/">
-                  <img
-                    src="/images/icon.png"
-                    height="100px"
-                    width="100px"
-                  ></img>
-                </Link>
-                <div>
+
+
+          <nav className="mainNav">
+                {/* main logo is here */}
+                <div className="logoPosition pt-3 increaseHover2">
+                  <Link to="/">
+                    <img
+                      src="/images/icon.png"
+                      height="100px"
+                      width="100px"
+                    ></img>
+                  </Link>
+                </div>
+
+                {/* icons is here */}
+                <div className="iconPosition">
                   <a href='#' onClick={this.searchDrop}>
                     <img
                       src="/images/search.png"
                       height="25px"
                       width="25px"
+                      className="increaseHover2"
                     ></img>
                   </a>
-                  <Link className="p-1" to="/cart">
+                  <Link className="p-1" to="/cart" >
                     <img
                       src="/images/cart.png"
                       height="25px"
                       width="25px"
+                      className="increaseHover2"
                     ></img>
                   </Link>
                   <Link className="p-1" to="/profile">
@@ -74,12 +82,14 @@ class App extends React.Component {
                       src="/images/user.png"
                       height="25px"
                       width="25px"
+                      className="increaseHover2"
                     ></img>
                   </Link>
                 </div>
-              </div>
-            </div>
           </nav>
+
+
+
           {this.state.clickFlag== 1 ? <div className="" style={{height:"100px"}}>
           <div className="position-relative container">
             <div className="position-relative mw-4xl mx-auto">
@@ -115,24 +125,33 @@ class App extends React.Component {
         </Router>
         <div className="display-6 fs-6 ColorMainFooter-bg p-2">
           <p className=" d-flex justify-content-right p-2">
-            <img
-              src="./images/twitter.png"
-              style={{ width: "25px" }}
-              className="m-2"
-              alt="instagram"
-            />
-            <img
-              src="./images/facebook.png"
-              style={{ width: "25px" }}
-              className="m-2"
-              alt="instagram"
-            />
-            <img
-              src="./images/instagram.png"
-              style={{ width: "25px" }}
-              className="m-2"
-              alt="instagram"
-            />
+            <a href="https://twitter.com/">
+              <img
+                src="./images/twitter.png"
+                style={{ width: "25px" }}
+                className="m-2"
+                alt="twitter"
+              />
+            </a>
+         
+            <a href="https://www.facebook.com/">
+              <img
+                src="./images/facebook.png"
+                style={{ width: "25px" }}
+                className="m-2"
+                alt="facebook"
+              />
+            </a>
+            
+            <a href="https://www.instagram.com/">
+              <img
+                src="./images/instagram.png"
+                style={{ width: "25px" }}
+                className="m-2"
+                alt="instagram"
+              />
+            </a>
+
           </p>
             <div >
               Our Location: 76 Bukit Timah Road #01-34 Singapore 198253 <br/> Tue-Fri 11.30AM-7PM, Sat 10AM-5PM, Sun 10AM-2PM <br/>Phone: +65 9982 1982
