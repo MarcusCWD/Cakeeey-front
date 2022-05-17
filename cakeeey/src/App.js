@@ -12,16 +12,22 @@ import UserToken from "./pages/UserToken.js";
 
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 
 
 class App extends React.Component {
+  state = {
+    clickFlag: false,
+  };
 
+  searchDrop = () => {
+    let previousclick = !(this.state.clickFlag)
+    this.setState({
+      clickFlag: previousclick
+    });
+  };
+  
   render() {
-
-    let searchDrop = () => {
-      
-    }
-
     return (
       <React.Fragment>
         <Router>
@@ -40,7 +46,7 @@ class App extends React.Component {
                   ></img>
                 </Link>
                 <div>
-                  <a href='#' onClick={searchDrop}>
+                  <a href='#' onClick={this.searchDrop}>
                     <img
                       src="/images/search.png"
                       height="25px"
@@ -65,6 +71,23 @@ class App extends React.Component {
               </div>
             </div>
           </nav>
+          {this.state.clickFlag== 1 ? <div className="" style={{height:"100px"}}>
+          <div className="position-relative container">
+            <div className="position-relative mw-4xl mx-auto">
+              <div className="position-absolute top-50 start-0 end-0 translate-middle-y ms-n6 me-n6" ></div>
+                  <div className="position-relative py-16 pt-md-32 pb-md-20 px-4 px-sm-8 bg-white">
+                    <div className="mw-lg mx-auto text-center">
+                      {/* button search group */}
+                      <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline-primary">search</button>
+                      </div>
+                      {/* end button search group */}
+                    </div>
+                  </div>
+              </div> 
+          </div>
+          </div> : null}
           <UserToken>
              <Routes>
             {/* Main route */}
