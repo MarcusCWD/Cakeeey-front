@@ -147,11 +147,10 @@
 
 .image-order {
   /* width: 200px; */
-  height: 350px;
+  height: 250px;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
-
 }
 
 .OrderListing{
@@ -191,4 +190,14 @@
   position:absolute;
   top: 20px;;
   right: 20px;
+}
+
+@media only screen and (max-width: 786px) {
+  .image-order {
+    /* width: 200px; */
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+  }
 }

@@ -21,13 +21,18 @@ export default function Cart() {
         }
 
         else{
-          const internalFunction = async () => {
-            let response = await axios.get("https://cakeeey.herokuapp.com/api/cart/"+ tokenContext.user.id )
-            setCartItems(response.data)
-          }
-          internalFunction()
+            // we check if the user has loaded from componenet did mount
+            console.log(tokenContext.user)
+            if(tokenContext.user){
+              console.log(tokenContext.user.id)
+              const internalFunction = async () => {
+              let response = await axios.get("https://cakeeey.herokuapp.com/api/cart/"+ tokenContext.user.id )
+              setCartItems(response.data)
+            }
+            internalFunction()
+            }
         }
-      }, []);
+      }, [tokenContext.user]);
 
       // whenever the state in cart item changes, we know that the user must have modified the qty
       useEffect(() => {
@@ -70,8 +75,9 @@ export default function Cart() {
     }
 
       return (
+        
         <section className="container" style={{minHeight: '400px'}}>
-            <div className="row">
+            <div className="d-flex flex-md-row flex-column justify-content-between">
                 <div className="col-2 FontMain" style={{fontSize:"32px"}}>Your Cart</div>
                 <div className="col-4"></div>
                 <div className="col-4">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>

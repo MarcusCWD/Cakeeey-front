@@ -1,10 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import TokenContext from "./TokenContext";
+
 
 export default function Login() {
     const navigate = useNavigate();
+    let tokenContext = useContext(TokenContext);
 
     const [formState, setFormState] = useState({
         email: "",
@@ -35,6 +38,7 @@ export default function Login() {
             else{
                 localStorage.setItem("accessToken", response.data.accessToken);
                 localStorage.setItem("refreshToken", response.data.refreshToken);
+                tokenContext.updateUser();
                 navigate("/profile");
             }
     };
