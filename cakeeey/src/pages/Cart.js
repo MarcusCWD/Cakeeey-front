@@ -44,8 +44,6 @@ export default function Cart() {
         setPriceTotal(tempTotal)
       }, [cartItems]);
 
-      
-
       const incrementQty = async (e) => {
         const productIndex = (cartItems).findIndex(p => p.product_id === parseInt(e.target.name))
         let cloned = [...cartItems]
@@ -79,11 +77,10 @@ export default function Cart() {
                 <div className=" FontMain fs-1">Your Cart</div>
                 
                 <div className="fs-2">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
-                <div className="">
-                  <a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.herokuapp.com/api/checkout/` + tokenContext.user.id}>Checkout</a>
-                </div>  
-                <hr/>
+                {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.herokuapp.com/api/checkout/` + tokenContext.user.id}>Checkout</a></div>}   
             </div>
+            <hr/>
+            {cartItems.length < 1 ? <div className="text-center mt-5 pt-5 fw-bold">Cart is empty</div> : null} 
             {cartItems &&
             cartItems.map((p) => (
             <div className="row mx-2">
