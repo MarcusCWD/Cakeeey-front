@@ -29,7 +29,7 @@ export default function Products() {
 
   return (
     <React.Fragment>
-      <div className="d-flex align-items-start container">
+      <div className="d-flex align-items-start container" style={{minHeight: '700px'}}>
         <div
           className="nav flex-column nav-pills me-3 col-3"
           id="v-pills-tab"
@@ -50,18 +50,22 @@ export default function Products() {
           </button>
           {allSeasons &&
             allSeasons.map((p) => (
+              
+
               <button
                 className="nav-link"
-                id="v-pills-profile-tab"
+                id={`v-pills-${p.name}-tab`} 
                 data-bs-toggle="pill"
-                data-bs-target="#v-pills-profile"
+                data-bs-target={`#v-pills-${p.name}`}
                 type="button"
                 role="tab"
-                aria-controls="v-pills-profile"
+                aria-controls={`v-pills-${p.name}`}
                 aria-selected="false"
               >
                 {p.name}
               </button>
+         
+             
             ))}
         </div>
         <div className="tab-content col-9" id="v-pills-tabContent">
@@ -94,7 +98,35 @@ export default function Products() {
                 ))}
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+          {allSeasons &&
+            allSeasons.map((p) => (
+              <div class="tab-pane fade" id={`v-pills-${p.name}`} role="tabpanel" aria-labelledby={`v-pills-${p.name}-tab`}>
+                {console.log(p)}
+              <div className="row g-2 p-2">
+              {p.cakes &&
+                p.cakes.map((cakes) => (
+                  <div className="col-4">
+                    <Link
+                      to={"/product/" + cakes.id}
+                      href="#"
+                      className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
+                    >
+                      <div
+                        className="image"
+                        style={{ backgroundImage: `url(${cakes.image_url})` }}
+                      ></div>
+                      <div className="card-body">
+                        <p className="card-title FontMain FontMain-color3 nostyle" style={{height:"45px"}}>
+                          {cakes.name}
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>
+              </div>
+            ))}
+          
         </div>
       </div>
     </React.Fragment>

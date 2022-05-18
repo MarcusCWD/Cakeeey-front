@@ -29,13 +29,13 @@ export default function Profile() {
     });
     
   }, [tokenContext.user.id]);
-
+  console.log(tokenContext.user)
   return (
-    <section className="container" style={{ minHeight: "400px" }}>
+    <section className="container" style={{minHeight: '700px'}}>
       <div className="row d-flex flex-lg-row-reverse">
         <div className="col-12 col-lg-3 FontMain mt-2">
-          <div className="d-inline-flex">
-            <div style={{ fontSize: "24px" }}>My Account </div>
+          <div className="d-inline-flex my-1">
+            <div className="fs-2">My Account </div>
             <button
               type="button"
               className="btn BtnMain FontMain mx-3"
@@ -48,19 +48,20 @@ export default function Profile() {
           {tokenContext.order &&
             tokenContext.order.slice(0, 1).map((p) => (
               <div>
-                <div style={{ fontSize: "18px" }}>Name</div>
-                <div>
+                <div className="fs-4">Name</div>
+                <div  className="fs-6">
                   {p.firstname} {p.lastname}
                 </div>
-                <div>{p.email}</div>
-                <br></br>
-                <div style={{ fontSize: "18px" }}>Default address</div>
-                <div>{p.address}</div>
+                <div className="fs-6">{p.email}</div>
+                <br/>
+                <div className="fs-4">Default address</div>
+                <div className="fs-6">{p.address}</div>
               </div>
             ))}
+            <hr/>
         </div>
         <div className="col-12 col-lg-9 ">
-          <div className="mt-2 FontMain" style={{ fontSize: "36px" }}>
+          <div className="mt-2 FontMain fs-1 my-1">
             Your Order
           </div>
           {/* check if the order exist in the first place. if it does not, print out does not exist */}
@@ -75,9 +76,9 @@ export default function Profile() {
                       className="d-flex flex-md-row flex-column justify-content-between OrderListing"
                       style={{  color: "#7c7c7c" }}
                     >
-                      <div className="m-2 ">Order Number: {p.id} </div>
-                      <div className="m-2 ">Status: {p.status.status} </div>
-                      <div className="m-2 ">Date: {p.date.slice(0, 10)} </div>
+                      <div className="m-2 fs-6">Order Number: {p.id} </div>
+                      <div className="m-2 fs-6">Status: {p.status.status} </div>
+                      <div className="m-2 fs-6">Date: {p.date.slice(0, 10)} </div>
                     </div>
                     {p.purchases &&
                       p.purchases.map((i) => (
@@ -89,20 +90,20 @@ export default function Profile() {
                             }}
                           ></div>
                           <div className="col-5 my-2">
-                            <div style={{ fontSize: "24px" }}>
+                            <div className="fs-6">
                               {i.product.cake.name}
                             </div>
-                            <div style={{ fontSize: "18px" }}>
+                            <div className="fs-6">
                               Size: {i.product.cakesize.size}
                             </div>
-                            <div style={{ fontSize: "18px" }}>
-                              Quantity: {i.quantity}
+                            <div className="fs-6">
+                              Qty: {i.quantity}
                             </div>
                           </div>
 
                           <div className="col-4 my-2">
-                            <div style={{ fontSize: "24px" }}>Price:</div>
-                            <div style={{ color: "#7c7c7c", fontSize: "24px" }}>
+                            <div className="fs-6">Price:</div>
+                            <div style={{ color: "#7c7c7c"}} className="fs-6">
                               $ {parseFloat(i.product.price / 100).toFixed(2)}
                             </div>
                           </div>

@@ -58,8 +58,7 @@ export default function Main() {
         {/* start call to action */}
         <div className="position-absolute top-50 start-50 translate-middle">
           <div
-            className="FontMain-color1 FontMain text-center"
-            style={{ fontSize: "36px" }}
+            className="FontMain-color1 FontMain text-center fs-1"   
           >
             FOR YOUR SPECIAL OCCASIONS
           </div>
@@ -81,10 +80,10 @@ export default function Main() {
 
       {/* start selected products */}
       <section className="mt-5 mb-2 text-dark">
-        <div className="display-4 p-3 mx-3 FontMain">Featured Products</div>
+        <div className="fs-2 p-3 mx-3 FontMain fw-bold">Featured Products</div>
         <div className="scrolling-wrapper row flex-row flex-nowrap flex-lg-wrap m-4 pb-2 pt-2 gap-3 gap-lg-4">
           {allCakes &&
-            (allCakes.slice(0,8)).map((p) => ( // we limit the cards to show 8 featured items
+            (allCakes.slice(0,10)).map((p) => ( // we limit the cards to show 8 featured items
               <div className="col-7 col-md-3 col-lg-2 shadow-sm p-3 mb-4 bg-body rounded increaseHover2">
                 <Link
                   to={"/product/" + p.id}
@@ -97,7 +96,7 @@ export default function Main() {
                       style={{ backgroundImage: `url(${p.image_url})` }}
                     ></div>
                     <p
-                      className="fs-6 fw-bold mt-2 FontMain"
+                      className="fs-6 mt-2 FontMain"
                       style={{ lineHeight: "1.2" }}
                     >
                       {p.name}

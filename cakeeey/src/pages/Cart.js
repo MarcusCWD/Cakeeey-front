@@ -19,12 +19,10 @@ export default function Cart() {
         if (!token) {
           navigate("/login");
         }
-
         else{
-            // we check if the user has loaded from componenet did mount
-            console.log(tokenContext.user)
-            if(tokenContext.user){
-              console.log(tokenContext.user.id)
+            tokenContext.updateUser()
+            // we check if the user has loaded
+            if(tokenContext.user.id){
               const internalFunction = async () => {
               let response = await axios.get("https://cakeeey.herokuapp.com/api/cart/"+ tokenContext.user.id )
               setCartItems(response.data)
@@ -32,7 +30,7 @@ export default function Cart() {
             internalFunction()
             }
         }
-      }, [tokenContext.user]);
+      }, [tokenContext.user.id]);
 
       // whenever the state in cart item changes, we know that the user must have modified the qty
       useEffect(() => {
@@ -76,18 +74,19 @@ export default function Cart() {
 
       return (
         
-        <section className="container" style={{minHeight: '400px'}}>
-            <div className="d-flex flex-md-row flex-column justify-content-between">
-                <div className="col-2 FontMain" style={{fontSize:"32px"}}>Your Cart</div>
-                <div className="col-4"></div>
-                <div className="col-4">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
-                <div className="col-2">
+        <section className="container" style={{minHeight: '700px'}}>
+            <div className="d-flex flex-sm-row flex-column  justify-content-between mx-2">
+                <div className=" FontMain fs-1">Your Cart</div>
+                
+                <div className="fs-2">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
+                <div className="">
                   <a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.herokuapp.com/api/checkout/` + tokenContext.user.id}>Checkout</a>
-                </div>   
+                </div>  
+                <hr/>
             </div>
             {cartItems &&
             cartItems.map((p) => (
-            <div className="row">
+            <div className="row mx-2">
             <div
                 className="image-order col-3 my-2"
                 style={{
@@ -95,16 +94,16 @@ export default function Cart() {
                 }}
             ></div>
                 <div className="col-4">
-                  <div style={{fontSize:"24px"}}>{p.product.cake.name}</div>
-                  <div style={{fontSize:"18px"}}>Size: {p.product.cakesize.size}</div>
+                  <div className="fs-6">{p.product.cake.name}</div>
+                  <div  className="fs-6">Size: {p.product.cakesize.size}</div>
                   <div className=" mb-2 d-flex">
-                    <div className="p-2"><button className="cart-update-qty btn btn-sm FontMain BtnMain" style={{fontSize:'18px'}} onClick={decrementQty} name={p.product_id} value={p.quantity}>-</button></div>
+                    <div className="p-2"><button className="cart-update-qty btn btn-sm FontMain BtnMain" onClick={decrementQty} name={p.product_id} value={p.quantity}>-</button></div>
                     <div className="p-2">{p.quantity}</div>
-                    <div className="p-2"><button className="cart-update-qty btn btn-sm FontMain BtnMain" style={{fontSize:'18px'}} onClick={incrementQty} name={p.product_id} value={p.quantity}>+</button></div>
+                    <div className="p-2"><button className="cart-update-qty btn btn-sm FontMain BtnMain"  onClick={incrementQty} name={p.product_id} value={p.quantity}>+</button></div>
                   </div>
                 </div>
                 <div className="col-3">
-                  <div>Individual Price:</div>
+                  <div>Individual Price: $</div>
                   <div> {parseFloat(p.product.price / 100).toFixed(2)}</div>
                 </div>
                 <div className="col-2">
