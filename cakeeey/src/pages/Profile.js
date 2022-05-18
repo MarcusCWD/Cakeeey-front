@@ -60,7 +60,7 @@ export default function Profile() {
             <hr/>
         </div>
         <div className="col-12 col-lg-9 ">
-          <div className="mt-2 FontMain fs-1 my-1">
+          <div className="mt-2 FontMain fs-1 my-4">
             Your Order
           </div>
           {/* check if the order exist in the first place. if it does not, print out does not exist */}
@@ -70,7 +70,7 @@ export default function Profile() {
             <div>
               {tokenContext.order &&
                 tokenContext.order.map((p) => (
-                  <div className="OrderBorder FontMain">
+                  <div className="OrderBorder FontMain my-2">
                     <div
                       className="d-flex flex-md-row flex-column justify-content-between OrderListing"
                       style={{  color: "#7c7c7c" }}

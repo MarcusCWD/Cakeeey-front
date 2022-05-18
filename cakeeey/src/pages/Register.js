@@ -3,13 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Register(props) {
+export default function Register() {
     const [isPassword, setIsPassword] = useState(true)
     const [isFirstName, setIsFirstName] = useState(true)
     const [isLastName, setIsLastName] = useState(true)
     const [isEmailFormat, setIsEmailFormat] = useState(true)
     const [isAddress, setIsAddress] = useState(true)
-    let flag = 1
     const navigate = useNavigate();
 
     const [formState, setFormState] = useState({
@@ -33,6 +32,7 @@ export default function Register(props) {
     }
 
     const registerUser = async () => {
+        let flag = 1
         if(formState.firstname.length < 2 || formState.firstname.length > 45){
             flag = 0
             setIsFirstName(false)
@@ -69,7 +69,7 @@ export default function Register(props) {
       }, []);
 
     return (
-        <section className="py-20" style={{height:"600px"}} >
+        <section className="py-20" style={{minHeight:"600px"}} >
         <div style={{height:"50px"}}></div>
         <div className="position-relative container">
         <div className="position-relative mw-4xl mx-auto">
@@ -126,7 +126,7 @@ export default function Register(props) {
                 placeholder="password"
             ></input>
              {isPassword==false ? <div className="redColor">Please enter atleast 6 characters</div> : <div>{null}</div>} 
-            <div className="mt-12 mt-md-16 btn btn-dark" onClick={registerUser}>
+            <div className="my-5 mt-md-16 btn btn-dark" onClick={registerUser}>
                 Create Account
             </div>
             </form>
