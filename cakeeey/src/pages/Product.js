@@ -56,6 +56,7 @@ export default function Product() {
   }, [sizeStore])
 
   useEffect(() => {
+    tokenContext.updateUser()
     const fetchPost = async () => {
       const response = await axios.get(
         "https://cakeeey.herokuapp.com/api/products/cakes/" + cake_id
@@ -127,10 +128,11 @@ export default function Product() {
   }
 
   return (
-    <React.Fragment>
-      <div className="row container-fluid">
-        {/* image */}
-        <div className="col-7">
+    <React.Fragment className=" d-flex justify-content-center">
+      <div className="container">
+        <div className="row">
+              {/* image */}
+        <div className="col-12 col-md-7">
           <div
             className="image-individual"
             style={{ backgroundImage: `url(${image})` }}
@@ -138,7 +140,7 @@ export default function Product() {
         </div>
 
         {/* details of the item */}
-        <div className="col-5 p-2">
+        <div className="col-12 col-md-5 p-2">
           <div className="FontMain " style={{ fontSize: "32px" }}>
             {name}
           </div>
@@ -146,12 +148,12 @@ export default function Product() {
             {parseFloat(price / 100).toFixed(2)}
           </div>
           <div>
-            <label className="drop-down-label-width">Select Cake Size</label>
+            <label className="drop-down-label-width"></label>
             <select
               value={sizeg.size}
               name="id"
               onChange={updateFormField}
-              className="drop-down-width"
+              className="drop-down-width my-4"
             >
               <option>Choice</option>
               {sizeg && sizeg.map((p) => (
@@ -159,19 +161,22 @@ export default function Product() {
               ))}
             </select>
           </div>
-          <div style={{height:"40px"}}></div>
+          <div style={{height:"60px"}}></div>
           {/* description */}
           <div>{description}</div>
           {/* ingredient */}
-          <div style={{height:"100px"}}></div>
+          <div style={{height:"70px"}}></div>
           <div>Ingredients: {ingredient && ingredient.map((p) => (
                 <p className="d-inline">{p}, </p>
               ))}</div>
         {/* modal for cart  */}
-        
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={addCart}>
+        <div style={{height:"70px"}}></div>
+        <div className="my-4">
+        <button type="button" className="btn BtnMain FontMain" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={addCart}>
           Add to Cart
         </button>
+
+        </div>
 
 
         <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -184,6 +189,8 @@ export default function Product() {
           </div>
         </div>
         </div>
+        </div>
+    
       </div>
     </React.Fragment>
   );

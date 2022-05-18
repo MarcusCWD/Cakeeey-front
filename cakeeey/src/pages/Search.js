@@ -23,18 +23,19 @@ export default function Search(props) {
   
 
     return(
-    <React.Fragment>
-      <div className="row g-2 p-2">
+    <React.Fragment className=" d-flex justify-content-center">
+      <div className="container">
+      <div className="row g-2 p-5" style={{minHeight:"600px"}}>
               {fetchSearch &&
                 fetchSearch.map((p) => (
-                  <div className="col-4">
+                  <div className="col-12 col-sm-9 col-md-6 col-xl-3">
                     <Link
                       to={"/product/" + p.id}
                       href="#"
                       className="card p-0 mb-2 mx-auto mx-md-0 nostyle"
                     >
                       <div
-                        className="image"
+                        className="image-search"
                         style={{ backgroundImage: `url(${p.image_url})` }}
                       ></div>
                       <div className="card-body">
@@ -46,6 +47,8 @@ export default function Search(props) {
                   </div>
                 ))}
             </div>
+      </div>
+
     </React.Fragment>
         
 

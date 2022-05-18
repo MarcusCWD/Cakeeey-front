@@ -201,3 +201,45 @@
     border-radius: 5px;
   }
 }
+
+.image-search {
+  /* width: 200px; */
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.3em;
+}
+@media only screen and (max-width: 576px) {
+  .image-search {
+    /* width: 200px; */
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.3em;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .image-individual {
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .image-individual {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .image-individual {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+

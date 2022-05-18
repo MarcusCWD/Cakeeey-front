@@ -78,7 +78,7 @@ export default function Products() {
             <div className="row g-2 p-2">
               {allCakes &&
                 allCakes.map((p) => (
-                  <div className="col-4">
+                  <div className="col-md-4">
                     <Link
                       to={"/product/" + p.id}
                       href="#"
@@ -105,7 +105,7 @@ export default function Products() {
               <div className="row g-2 p-2">
               {p.cakes &&
                 p.cakes.map((cakes) => (
-                  <div className="col-4">
+                  <div className="col-md-4">
                     <Link
                       to={"/product/" + cakes.id}
                       href="#"

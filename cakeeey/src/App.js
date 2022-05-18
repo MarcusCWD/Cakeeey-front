@@ -100,7 +100,7 @@ class App extends React.Component {
                       <div className="input-group">
                         <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"  value= {this.state.searchBox} name="searchBox" onChange={this.updateFormField}/>
                         <Link to="/search "href="#">
-                          <button type="button" className="btn btn-outline-primary">search</button>
+                          <button type="button" className="btn BtnMain FontMain">search</button>
                         </Link>
                       </div>
                       {/* end button search group */}
