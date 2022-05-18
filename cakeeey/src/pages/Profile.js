@@ -42,22 +42,16 @@ export default function Profile() {
             >
               Logout
             </button>
+          </div>  
+          <div className="fs-4">Name</div>
+          <div  className="fs-6">
+            {tokenContext.user.firstname} {tokenContext.user.lastname}
           </div>
-
-          {tokenContext.order &&
-            tokenContext.order.slice(0, 1).map((p) => (
-              <div>
-                <div className="fs-4">Name</div>
-                <div  className="fs-6">
-                  {p.firstname} {p.lastname}
-                </div>
-                <div className="fs-6">{p.email}</div>
-                <br/>
-                <div className="fs-4">Default address</div>
-                <div className="fs-6">{p.address}</div>
-              </div>
-            ))}
-            <hr/>
+          <div className="fs-6">{tokenContext.user.email}</div>
+          <br/>
+          <div className="fs-4">Default address</div>
+          <div className="fs-6">{tokenContext.user.address}</div>
+          <hr/>
         </div>
         <div className="col-12 col-lg-9 ">
           <div className="mt-2 FontMain fs-1 my-4">
