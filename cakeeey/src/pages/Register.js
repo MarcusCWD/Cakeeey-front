@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -61,10 +61,12 @@ export default function Register(props) {
     };
 
 
-    // const [errorState, setErrorState] = useState({
-    //     errorMessage: "",
-    //     display: "d-none",
-    // });
+    // check if the user has already logged in
+    useEffect(() => {
+        if(localStorage.getItem("refreshToken")){
+            navigate("/profile");
+        }
+      }, []);
 
     return (
         <section className="py-20" style={{height:"600px"}} >
@@ -80,50 +82,50 @@ export default function Register(props) {
                     <h2 className="mb-8">Register</h2>
                       <form>
             <input
-                className="form-control form-control-lg mb-4"
+                className="form-control form-control-lg mt-4"
                 type="text"
                 name="firstname"
                 value={formState.firstname}
                 onChange={updateFormField}
                 placeholder="first name"
             ></input>
-            {isFirstName==false ? <div>Please enter atleast 2 characters and up to 45 characters</div> : <div>{null}</div>} 
+            {isFirstName==false ? <div className="redColor">Please enter atleast 2 characters and up to 45 characters</div> : <div>{null}</div>} 
             <input
-                className="form-control form-control-lg mb-4"
+                className="form-control form-control-lg mt-4"
                 type="text"
                 name="lastname"
                 value={formState.lastname}
                 onChange={updateFormField}
                 placeholder="last name"
             ></input>
-            {isLastName==false ? <div>Please enter atleast 2 characters and up to 45 characters</div> : <div>{null}</div>} 
+            {isLastName==false ? <div className="redColor">Please enter atleast 2 characters and up to 45 characters</div> : <div>{null}</div>} 
             <input
-                className="form-control form-control-lg mb-4"
+                className="form-control form-control-lg mt-4"
                 type="text"
                 name="email"
                 value={formState.email}
                 onChange={updateFormField}
                 placeholder="email"
             ></input>
-            {isEmailFormat==false ? <div>Please enter a valid email</div> : <div>{null}</div>} 
+            {isEmailFormat==false ? <div className="redColor">Please enter a valid email</div> : <div>{null}</div>} 
             <input
-                className="form-control form-control-lg mb-4"
+                className="form-control form-control-lg mt-4"
                 type="text"
                 name="address"
                 value={formState.address}
                 onChange={updateFormField}
                 placeholder="address"
             ></input>
-            {isAddress==false ? <div>Please enter atleast 10 characters</div> : <div>{null}</div>} 
+            {isAddress==false ? <div className="redColor">Please enter atleast 10 characters</div> : <div>{null}</div>} 
             <input
-                className="form-control form-control-lg mb-4"
+                className="form-control form-control-lg mt-4"
                 type="text"
                 name="password"
                 value={formState.password}
                 onChange={updateFormField}
                 placeholder="password"
             ></input>
-             {isPassword==false ? <div>Please enter atleast 6 characters</div> : <div>{null}</div>} 
+             {isPassword==false ? <div className="redColor">Please enter atleast 6 characters</div> : <div>{null}</div>} 
             <div className="mt-12 mt-md-16 btn btn-dark" onClick={registerUser}>
                 Create Account
             </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import TokenContext from "./TokenContext";
 
 
@@ -42,6 +42,12 @@ export default function Login() {
                 navigate("/profile");
             }
     };
+    // check if the user has already logged in
+    useEffect(() => {
+        if(localStorage.getItem("refreshToken")){
+            navigate("/profile");
+        }
+      }, []);
 
     return (
         <React.Fragment>

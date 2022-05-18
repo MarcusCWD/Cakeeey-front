@@ -29,7 +29,7 @@ export default function Products() {
 
   return (
     <React.Fragment>
-      <div className="d-flex align-items-start container" style={{minHeight: '700px'}}>
+      <div className="d-flex align-items-start container" style={{minHeight: '900px'}}>
         <div
           className="nav flex-column nav-pills me-3 col-3"
           id="v-pills-tab"

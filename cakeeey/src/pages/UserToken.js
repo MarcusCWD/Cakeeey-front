@@ -9,43 +9,6 @@ export default class UserToken extends React.Component {
         order: [],
         cartItems: [],
     };
-    // everytime a user refreshes his page, componenetDidMount will run
-    // his browser will already have stored both access and refresh token
-    // so we will just check if old token still valid 
-    // async componentDidMount() {
-    //     console.log("Component did mount in context");
-    //     // retrive the localstore accesstoken
-    //     let token = localStorage.getItem("accessToken");
-    //     // check if the token even exist or not
-    //     if (token) {
-    //         let tokenExpiry = jwt_decode(token).exp;
-    //         let currentUnixTime = Math.round(new Date().getTime() / 1000);
-    //         // compare the current time to token time
-    //         if (currentUnixTime >= tokenExpiry) {
-    //             console.log("Access token has expired. Getting a new token now.");
-    //             // Token has expired, need to refresh
-    //             const refreshToken = localStorage.getItem("refreshToken");
-    //             let refreshResponse = await axios.post("https://cakeeey.herokuapp.com/api/user/refresh", {
-    //                 refreshToken: refreshToken,
-    //             });
-    //             localStorage.setItem("accessToken", refreshResponse.data.accessToken);
-    //             token = refreshResponse.data.accessToken;
-    //         }
-         
-    //         let waitFor =  async () => {
-    //             let response = await axios.get("https://cakeeey.herokuapp.com/api/user/profile", {
-    //                 headers: {
-    //                     Authorization: `Bearer ${token}`,
-    //                 },
-    //             })
-    //             console.log( response.data)
-    //             this.setState({
-    //                 user: response.data,
-    //             });
-    //         }
-    //         await waitFor()
-    //     }
-    // }
 
     render =  () => {
 

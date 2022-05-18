@@ -49,19 +49,19 @@ class App extends React.Component {
 
           <nav className="mainNav">
                 {/* main logo is here */}
-                <div className="logoPosition pt-3 increaseHover2">
+                <div className="logoPosition py-3 increaseHover2">
                   <Link to="/">
                     <img
                       src="/images/icon.png"
-                      height="100px"
-                      width="100px"
+                      height="110px"
+                      width="110px"
                     ></img>
                   </Link>
                 </div>
 
                 {/* icons is here */}
                 <div className="iconPosition">
-                  <a href='#' onClick={this.searchDrop}>
+                  <a href='#' onClick={this.searchDrop} className="p-1">
                     <img
                       src="/images/search.png"
                       height="25px"

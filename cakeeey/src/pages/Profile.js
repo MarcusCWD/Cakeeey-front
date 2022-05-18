@@ -29,7 +29,6 @@ export default function Profile() {
     });
     
   }, [tokenContext.user.id]);
-  console.log(tokenContext.user)
   return (
     <section className="container" style={{minHeight: '700px'}}>
       <div className="row d-flex flex-lg-row-reverse">
