@@ -69,7 +69,7 @@ export default function Register() {
       }, []);
 
     return (
-        <section className="py-20" style={{minHeight:"600px"}} >
+        <section className="py-20" style={{minHeight:"800px"}} >
         <div style={{height:"50px"}}></div>
         <div className="position-relative container">
         <div className="position-relative mw-4xl mx-auto">

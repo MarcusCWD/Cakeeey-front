@@ -30,7 +30,7 @@ export default function Profile() {
     
   }, [tokenContext.user.id]);
   return (
-    <section className="container" style={{minHeight: '700px'}}>
+    <section className="container" style={{minHeight: '800px'}}>
       <div className="row d-flex flex-lg-row-reverse">
         <div className="col-12 col-lg-3 FontMain mt-2">
           <div className="d-inline-flex my-1">

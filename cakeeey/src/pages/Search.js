@@ -25,7 +25,7 @@ export default function Search(props) {
     return(
     <React.Fragment className=" d-flex justify-content-center">
       <div className="container">
-      <div className="row g-2 p-5" style={{minHeight:"600px"}}>
+      <div className="row g-2 p-5" style={{minHeight:"800px"}}>
               {fetchSearch &&
                 fetchSearch.map((p) => (
                   <div className="col-12 col-sm-9 col-md-6 col-xl-3">

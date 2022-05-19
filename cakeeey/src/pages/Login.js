@@ -51,7 +51,7 @@ export default function Login() {
 
     return (
         <React.Fragment>
-               <section className="py-20" style={{height:"600px"}} >
+               <section className="py-20" style={{height:"800px"}} >
                    <div style={{height:"100px"}}></div>
                 <div className="position-relative container">
                     <div className="position-relative mw-4xl mx-auto">
