@@ -72,3 +72,95 @@ _Non-functional requirements_
 
 Access the Figma skeleton framework [here](https://www.figma.com/file/nN2aLtFO91sTbXokPyYROr/Cakeeey.).
 
+### **Surface**
+
+_Colours_
+
+<img src='cakeeey/public/images/color-palette.png' style='display:block'><br>
+
+* The main color scheme of the app follows a classic pastel green tone and white. This helps enforce that the shop focuses on nature themed cakes that are being sold as a high end luxury consumable item.
+
+_Font Choice_
+* The font used is Lora. This font is a very classy and easy to read font.
+
+* Font size is are set to the default bootstrap font -fs. For most part, fs-6 is used while headers uses fs-2
+
+## Features
+1. **Main page**. User is able to see a call to action right at the landing page that will lead them to the product listing page. There are also featured items that will be displayed as scrollable cards on the landing page.
+
+2. **Filter season** This feature is used to narrow down the search results for the user. User can search for products by the season or occasion by clicking the respective option at the filter bar.
+
+3. **Users can click on listing cards to see listing details** This feature helps declutter the main page from all the details in each listing. Therefore, if the user is interested in any builds, they can look further into the card.
+
+4. **Search feature** The user is able to search by name and/or by the season's name. The search bar is placed in the navigation for quick access.
+
+5. **Add to cart** In each listing, the user can click on "add to cart" and the item will be added. In the Cart page, user can see what products they have accumulated. They can modify the quantity, delete item from cart as well.
+
+6. **Payment to Stripe** After the user has decided on the products they want, they can click a "check out" button to be redirected to Stripe payment. Stripe will send back a POST details of the payment.
+
+7.  **User account creation** Users will be able to log in only after they have a account with Cakeeey. To do that, they must register with their email, address, name etc.
+
+8. **User login** To be able to add any item to the cart, users will have to login to their account first. By clicking on "add to cart" while not being logged in, user will be redirected to the login page.
+
+## Testing
+
+**Test Cases**
+
+Access the test cases [here](https://github.com/MarcusCWD/Cakeeey-front/blob/main/test-case/Test%20Case.pdf).
+
+**Testing for Mobile Responsiveness**
+ * Testing was done using chrome developer tool with variable width sizes from 330px to 1400px
+
+## Technologies Used
+* [React.JS](https://reactjs.org/)
+    * Front end framework used across the web app
+    * React Hooks and Props
+* HTML5
+    * To create the framework of the web app
+* CSS3
+    * To style various elements throughout the web app
+* JavaScript
+    * To include interactive elements throughout the web app
+* [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    * To create tabs
+    * To create cards
+    * To create carousel
+    * To create drop down 
+* [Flaticon](https://www.flaticon.com/)
+    * For nav bar icons
+    * For logo design
+* [Figma](https://www.figma.com/)
+    * To create the skeleton mock up
+* [Git](https://git-scm.com/)
+    * For version control
+* [GitHub](http://github.com)
+    * To create repository
+* [Netlify](https://www.netlify.com/)
+    * To deploy web app
+* [Heroku](https://dashboard.heroku.com/)
+    * To deploy backend API
+
+## Deployment
+
+The web app is hosted using Netlify.
+The back end API is hosted using Heroku.
+
+**Dependencies**
+
+* [Axios](https://cdnjs.com/libraries/axios)
+    * To call API
+* [Express JS](https://expressjs.com/)
+    * Used for backend
+* [BookShelf ORM](https://bookshelfjs.org/)
+    * Used for backend. Object-Relational Mapping
+* [db migrate](https://www.npmjs.com/package/db-migrate)
+    * Used for backend to create migration files 
+
+## Credits
+
+* Icons on the app
+    * Downloaded and edited from [Flaticon](https://www.flaticon.com/)
+
+## Backend API service link
+
+* [Cakeeey. Backend site](https://github.com/MarcusCWD/Cakeeey-express)
