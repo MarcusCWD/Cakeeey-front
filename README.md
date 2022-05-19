@@ -1,5 +1,5 @@
 # Cakeeey.
-<img src='public/images/cakeeey.png' style='display:block'><br>
+<img src='cakeeey/public/images/cakeeey.png' style='display:block'><br>
 
 Access the live demo of the website [here](https://cakeeey.netlify.app/).
 
@@ -66,7 +66,7 @@ _Non-functional requirements_
 
 ### **Structure**
 
-<img src='public/images/flowchart.png' style='display:block'><br>
+<img src='cakeeey/public/images/flowchart.png' style='display:block'><br>
 
 ### **Skeleton**
 
