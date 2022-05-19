@@ -132,10 +132,10 @@ export default function Product() {
             {name}
           </div>
           <div className="FontMain display-6">
-            {parseFloat(price / 100).toFixed(2)}
+            ${parseFloat(price / 100).toFixed(2)}
           </div>
           <div>
-            <label className="drop-down-label-width"></label>
+            <label className="drop-down-label-width">Size:</label>
             <select
               value={sizeg.size}
               name="id"
