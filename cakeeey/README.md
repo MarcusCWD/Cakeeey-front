@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Cakeeey.
+<img src='public/images/cakeeey.png' style='display:block'><br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Access the live demo of the website [here](https://cakeeey.netlify.app/).
 
-## Available Scripts
+## Project Summary
 
-In the project directory, you can run:
+**Project Context**
 
-### `npm start`
+ _Cakeeey._ is a nature focused themed artisan e-commerce shop that is involved with the sales of cakes and help the a specialised bakery business to connect, market and recieve orders from customers. It aims to be the one stop shop for all baked goods for special occasions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**User Goals**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The aim of users is to get recommendations based on the special occasion that they would be celebrating such as birthday celebrations, mother’s day etc. while ensuring the finest quality of ingredients used in the baked goods. This includes having the product to be trackable on their account.
 
-### `npm test`
+**Organisational Goals**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app aims to provide users with recommendations, ease of payment and consistant updates on the orders. This ensures a smooth workflow for the business which results in a stronger customer base, thus generating a healty monetary growth.
 
-### `npm run build`
+**Justification for the App**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cakeeey. has a unique standing in the bakery space within Singapore as it focuses on artisan centric cakes. This calls for a dedicated and highly customisable web application to meet business demands. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## UX/UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Strategy**
+_User_
+* Objective: To be able to make an informed decision and selection before purchasing by checking out from the cart. 
 
-### `npm run eject`
+* Needs: Provide users with the ablity to edit and amend their cake selections before checkingout from their cart. Letting the user to view their orders and see the status, sub total price is crucial in keeping them informed of their orders.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Demographics:
+    * Users is targeted towards the younger population where they are interested in fancy artisan bespoke cakes
+    * Some users are presumed to be new to the bakery space
+    * Sufficient literacy in using technological devices
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+User Stories | Acceptance Criteria(s)
+------------ | -------------
+As a customer, I want to have a search feature so that I can find the related cakes that I would purchase for the occasion. | A search feature that will include the occasion and event.
+As a customer, I want to be shown the currently trending seasonal products when I enter the website so that I do not need to waste time searching for products. | Front page carousel and listing to promote on demand products. Possible to add in call to action and featured products.
+As a customer, I would like to have a way to cart all my items so that I can pay for a single bill when I checkout. | Must have a shopping cart that remembers the user items along with the session ID.
+As a customer, I want to be able to track my order and see the status on my profile page so that i can plan better for my celebrations | Must store and render the orders to the particular user such that they can see the status and their purchase history.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### **Scope**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Functional Specifications_
+* Have a Main page with featured products, call to action
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Have a Main page with the shop categories such as Classic cakes, summer cakes, Birthday cakes
 
-### Code Splitting
+* Have a search function that shows cakes based on Season and or name
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Have a filter function by season
 
-### Analyzing the Bundle Size
+* To be able to see the listing details which size, quantity and be able to cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Have a cart system to save the added items to the user’s cart
 
-### Making a Progressive Web App
+* Must have a user login system where users will have to login first before carting their items
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+_Non-functional requirements_
+* Mobile responsiveness
+    * Achieved via the use of appropriate media queries and flex box
 
-### Advanced Configuration
+### **Structure**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img src='public/images/flowchart.png' style='display:block'><br>
 
-### Deployment
+### **Skeleton**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Access the Figma skeleton framework [here](https://www.figma.com/file/nN2aLtFO91sTbXokPyYROr/Cakeeey.).
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
