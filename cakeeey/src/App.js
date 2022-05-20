@@ -42,12 +42,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <div className="ColorMain-bg FontMain text-center">
-            From 01 May to 22 May, enjoy our special seasonal cakes! 
-          </div>
+          <div className="stickyBar">
+             <div className="ColorMain-bg FontMain text-center">
+              From 01 May to 22 May, enjoy our special seasonal cakes! 
+            </div>
 
 
-          <nav className="mainNav">
+            <nav className="mainNav">
                 {/* main logo is here */}
                 <div className="logoPosition py-3 increaseHover2">
                   <Link to="/">
@@ -86,7 +87,9 @@ class App extends React.Component {
                     ></img>
                   </Link>
                 </div>
-          </nav>
+            </nav>
+          </div>
+         
 
 
 
