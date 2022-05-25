@@ -99,7 +99,7 @@ export default function Product() {
     if(tokenContext.user.id){
       // we check if "Choice" aka user did not select any size of cake 
       if((sizeStore.id != "Choice") && ((sizeStore[0].id) != "")){
-        return <div className="modal-body">Item Added to Cart</div>
+        return <div className="modal-body ">Item Added to Cart</div>
       }
       else{
         return <div className="modal-body" style={{color:"red"}}>Please Select a Size</div>

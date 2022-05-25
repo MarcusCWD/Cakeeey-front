@@ -42,7 +42,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <div className="stickyBar">
+          <div >
              <div className="ColorMain-bg FontMain text-center">
               From 01 May to 22 May, enjoy our special seasonal cakes! 
             </div>
