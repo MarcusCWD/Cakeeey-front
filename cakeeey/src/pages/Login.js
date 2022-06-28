@@ -62,7 +62,7 @@ export default function Login() {
                                    
                                 </div>
                                 <h2 className="mb-8">Login</h2>
-                                {loginError == 1 ? <div className="alert alert-danger">Login Error</div> : null}
+                                {loginError == 1 ? <div className="alert alert-danger" data-testid="error-msg">Login Error</div> : null}
                                 <form action="">
                                     <input
                                         className="form-control form-control-lg mb-4"
@@ -85,7 +85,7 @@ export default function Login() {
                                     {/* <p>
                                         Don't have an account? <Link to="/Signup">Create one</Link>
                                     </p> */}
-                                    <div className="mt-12 mt-md-16 btn btn-dark" onClick={loginUser}>
+                                    <div className="mt-12 mt-md-16 btn btn-dark" onClick={loginUser} data-testid="login-button">
                                         Login
                                     </div>
                                 </form>

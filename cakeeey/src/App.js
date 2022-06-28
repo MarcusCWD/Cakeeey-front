@@ -14,8 +14,6 @@ import UserToken from "./pages/UserToken.js";
 
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-
 
 class App extends React.Component {
   state = {
