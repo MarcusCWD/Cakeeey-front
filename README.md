@@ -137,13 +137,13 @@ Access the test cases [here](https://github.com/MarcusCWD/Cakeeey-front/blob/mai
     * To create repository
 * [Netlify](https://www.netlify.com/)
     * To deploy web app
-* [Heroku](https://dashboard.heroku.com/)
+* [Render](https://dashboard.render.com/)
     * To deploy backend API
 
 ## Deployment
 
 The web app is hosted using Netlify.
-The back end API is hosted using Heroku.
+The back end API is hosted using Render.
 
 **Dependencies**
 
