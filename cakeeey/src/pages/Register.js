@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { object, string, number, date, InferType } from 'yup';
 
 
 export default function Register() {
@@ -53,9 +54,19 @@ export default function Register() {
             flag = 0
             setIsPassword(false)
         }
+        // let userSchema = object({
+        //     name: string().required(),
+        //     age: number().required().positive().integer(),
+        //     email: string().email(),
+        //     website: string().url().nullable(),
+        //     createdOn: date().default(() => new Date()),
+        //   });
+
+        // const userYup = userSchema.validate(formState);
+
 
         if (flag == 1){
-            await axios.post('https://cakeeey.herokuapp.com/api/user/register', formState);
+            await axios.post('https://cakeeey.onrender.com/api/user/register', formState);
             navigate("/login");
         }
     };

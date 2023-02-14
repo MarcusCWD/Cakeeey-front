@@ -28,13 +28,13 @@ export default class UserToken extends React.Component {
                             console.log("Access token has expired. Getting a new token now.");
                             // Token has expired, need to refresh
                             const refreshToken = localStorage.getItem("refreshToken");
-                            let refreshResponse = await axios.post("https://cakeeey.herokuapp.com/api/user/refresh", {
+                            let refreshResponse = await axios.post("https://cakeeey.onrender.com/api/user/refresh", {
                                 refreshToken: refreshToken,
                             });
                             localStorage.setItem("accessToken", refreshResponse.data.accessToken);
                             token = refreshResponse.data.accessToken;
                         }
-                        let response = await axios.get("https://cakeeey.herokuapp.com/api/user/profile", {
+                        let response = await axios.get("https://cakeeey.onrender.com/api/user/profile", {
                             headers: {
                                 Authorization: `Bearer ${token}`,
                             },
@@ -61,7 +61,7 @@ export default class UserToken extends React.Component {
                     console.log("Calling retrive orders");
                     let token = localStorage.getItem("accessToken");
                     if(token){
-                        let response = await axios.get("https://cakeeey.herokuapp.com/api/order/"+ this.state.user.id +"/user", {
+                        let response = await axios.get("https://cakeeey.onrender.com/api/order/"+ this.state.user.id +"/user", {
                             headers: {
                                 Authorization: `Bearer ${token}`,
                             },

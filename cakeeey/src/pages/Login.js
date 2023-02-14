@@ -24,7 +24,7 @@ export default function Login() {
 
     const loginUser = async () => {
         
-            let response = await axios.post("https://cakeeey.herokuapp.com/api/user/login", formState);
+            let response = await axios.post("https://cakeeey.onrender.com/api/user/login", formState);
             if(response.data.error==="Wrong email or password"){
                 localStorage.setItem("accessToken", "");
                 localStorage.setItem("refreshToken", "");

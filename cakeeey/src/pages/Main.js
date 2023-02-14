@@ -9,7 +9,7 @@ export default function Main() {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.herokuapp.com/api/products/cakes"
+        "https://cakeeey.onrender.com/api/products/cakes"
       );
       setAllCakes(response.data);
     };

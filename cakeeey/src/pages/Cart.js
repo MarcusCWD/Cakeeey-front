@@ -24,7 +24,7 @@ export default function Cart() {
             // we check if the user has loaded
             if(tokenContext.user.id){
               const internalFunction = async () => {
-              let response = await axios.get("https://cakeeey.herokuapp.com/api/cart/"+ tokenContext.user.id )
+              let response = await axios.get("https://cakeeey.onrender.com/api/cart/"+ tokenContext.user.id )
               setCartItems(response.data)
             }
             internalFunction()
@@ -50,7 +50,7 @@ export default function Cart() {
         cloned[productIndex].quantity += 1
         setCartItems(cloned)
         console.log(cloned[productIndex])
-        await axios.post(`https://cakeeey.herokuapp.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity +`/update`)
+        await axios.post(`https://cakeeey.onrender.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity +`/update`)
       } 
       const decrementQty = async (e) => {
         const productIndex = (cartItems).findIndex(p => p.product_id === parseInt(e.target.name))
@@ -60,10 +60,10 @@ export default function Cart() {
         }
         setCartItems(cloned)
         console.log(cloned[productIndex])
-        await axios.post(`https://cakeeey.herokuapp.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity + `/update`)
+        await axios.post(`https://cakeeey.onrender.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity + `/update`)
       } 
       const deleteItem = async (e) => {
-        await axios.post(`https://cakeeey.herokuapp.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/delete`)
+        await axios.post(`https://cakeeey.onrender.com/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/delete`)
         const productIndex = cartItems.findIndex(p => p.product_id === parseInt(e.target.name))
         let cloned = [...cartItems]
         cloned.splice(productIndex, 1)
@@ -77,7 +77,7 @@ export default function Cart() {
                 <div className=" FontMain fs-1">Your Cart</div>
                 
                 <div className="fs-2">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
-                {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.herokuapp.com/api/checkout/` + tokenContext.user.id}>Checkout</a></div>}   
+                {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" href={`https://cakeeey.onrender.com/api/checkout/` + tokenContext.user.id}>Checkout</a></div>}   
             </div>
             <hr/>
             {cartItems.length < 1 ? <div className="text-center mt-5 pt-5 fw-bold">Cart is empty</div> : null} 

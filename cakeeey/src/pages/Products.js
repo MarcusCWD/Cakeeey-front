@@ -10,7 +10,7 @@ export default function Products() {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.herokuapp.com/api/products/seasons"
+        "https://cakeeey.onrender.com/api/products/seasons"
       );
       setAllSeasons(response.data);
     };
@@ -20,7 +20,7 @@ export default function Products() {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.herokuapp.com/api/products/cakes"
+        "https://cakeeey.onrender.com/api/products/cakes"
       );
       setAllCakes(response.data);
     };

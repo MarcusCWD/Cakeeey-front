@@ -11,7 +11,7 @@ export default function Search(props) {
       const getSearch = async () => {
         // console.log(props.search)
         const response = await axios.post(
-          "https://cakeeey.herokuapp.com/api/products/search", {
+          "https://cakeeey.onrender.com/api/products/search", {
           
               name: (props.search),
               season: (props.search),
