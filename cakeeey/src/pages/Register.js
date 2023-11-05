@@ -66,7 +66,7 @@ export default function Register() {
 
 
         if (flag == 1){
-            await axios.post('https://cakeeey.onrender.com/api/user/register', formState);
+            await axios.post(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + '/api/user/register', formState);
             navigate("/login");
         }
     };

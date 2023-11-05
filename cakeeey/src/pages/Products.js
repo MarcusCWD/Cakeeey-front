@@ -10,7 +10,7 @@ export default function Products() {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.onrender.com/api/products/seasons"
+        process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/seasons"
       );
       setAllSeasons(response.data);
     };
@@ -20,7 +20,7 @@ export default function Products() {
   useEffect(() => {
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.onrender.com/api/products/cakes"
+        process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes"
       );
       setAllCakes(response.data);
     };

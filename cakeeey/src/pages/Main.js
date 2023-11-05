@@ -7,9 +7,10 @@ export default function Main() {
   const [allCakes, setAllCakes] = useState([]);
 
   useEffect(() => {
+    console.log(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes")
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.onrender.com/api/products/cakes"
+        process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes"
       );
       setAllCakes(response.data);
     };

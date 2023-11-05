@@ -52,7 +52,7 @@ export default function Product() {
     tokenContext.updateUser()
     const fetchPost = async () => {
       const response = await axios.get(
-        "https://cakeeey.onrender.com/api/products/cakes/" + cake_id
+        process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes/" + cake_id
       )
       setDataStore(response.data)
 
@@ -88,7 +88,7 @@ export default function Product() {
   const addCart = async () => {
      (dataStore[0].products).map((s) => {
       if(s.cakesize_id == sizeStore.id){
-        let response = axios.post("https://cakeeey.onrender.com/api/cart/"+  tokenContext.user.id + `/` + s.id + `/add`);
+        let response = axios.post(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/cart/"+  tokenContext.user.id + `/` + s.id + `/add`);
         return response
       } 
     }

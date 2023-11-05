@@ -11,7 +11,7 @@ export default function Search(props) {
       const getSearch = async () => {
         // console.log(props.search)
         const response = await axios.post(
-          "https://cakeeey.onrender.com/api/products/search", {
+          process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/search", {
           
               name: (props.search),
               season: (props.search),
