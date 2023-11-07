@@ -29,7 +29,7 @@ export default function Main() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="./images/carousel3.png"
+                src="https://res.cloudinary.com/dfyhd6bpb/image/upload/v1699337210/nxdpqfvw22clp5k0gdcp.png"
                 className="d-block w-100"
                 alt="Black Sesame Hoji"
                 height="500px"
@@ -38,7 +38,7 @@ export default function Main() {
             </div>
             <div className="carousel-item">
               <img
-                src="./images/carousel2.png"
+                src="https://res.cloudinary.com/dfyhd6bpb/image/upload/v1699337609/bip8ownsvjfolcoyslgu.png"
                 className="d-block w-100"
                 alt="Strawberry Cake"
                 height="500px"
@@ -47,7 +47,7 @@ export default function Main() {
             </div>
             <div className="carousel-item">
               <img
-                src="./images/carousel1.png"
+                src="https://res.cloudinary.com/dfyhd6bpb/image/upload/v1699337615/jtnq3d15ldlbsxdrpvrg.png"
                 className="d-block w-100"
                 alt="Birthday Cupcake"
                 height="500px"
