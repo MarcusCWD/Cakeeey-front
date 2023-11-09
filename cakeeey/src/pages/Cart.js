@@ -69,6 +69,12 @@ export default function Cart() {
         cloned.splice(productIndex, 1)
         setCartItems(cloned)
     }
+    const redirectStripe = async () => {
+      console.log(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id)
+      let response = await axios.get(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id)
+      window.location.replace(response.data.stripe.url);
+      
+   }
 
       return (
         
@@ -77,7 +83,8 @@ export default function Cart() {
                 <div className=" FontMain fs-1">Your Cart</div>
                 
                 <div className="fs-2">Sub Total: $ {parseFloat(priceTotal / 100).toFixed(2)}</div>
-                {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" href={process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id}>Checkout</a></div>}   
+                {/* {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" href={process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id}>Checkout</a></div>}    */}
+                {cartItems.length < 1 ? <div></div> : <div><a  type="button" className="btn BtnMain FontMain" onClick={redirectStripe}>Checkout</a></div>}
             </div>
             <hr/>
             {cartItems.length < 1 ? <div className="text-center mt-5 pt-5 fw-bold">Cart is empty</div> : null} 
