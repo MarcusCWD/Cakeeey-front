@@ -8,6 +8,7 @@ import Profile from "./pages/Profile.js"
 import Cart from "./pages/Cart.js"
 import Register from "./pages/Register.js"
 import Search from "./pages/Search.js"
+import PageNotFound from "./pages/PageNotFound.js"
 
 // Imported Context
 import UserToken from "./pages/UserToken.js";
@@ -121,6 +122,7 @@ class App extends React.Component {
             <Route path="/cart" element={<Cart />} />
             <Route path="/register" element={<Register />} />
             <Route path="/search" element={<Search search={this.state.searchBox} />} />
+            <Route path="*" element={<PageNotFound/>}/>
           </Routes>
           </UserToken>
         </Router>
