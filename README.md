@@ -136,14 +136,7 @@ Access the test cases [here](https://github.com/MarcusCWD/Cakeeey-front/blob/mai
 * [GitHub](http://github.com)
     * To create repository
 
-## Deployment
-* [Hertzner](https://www.hetzner.com/)
-    * Cloud hosting & Firewall of VPS
-    * PM2 instance manager
-    * Nginx Web Server (gateway)
-    * Linux based OS
-
-**Dependencies**
+## Dependencies
 
 * [Axios](https://cdnjs.com/libraries/axios)
     * To call API
@@ -153,6 +146,13 @@ Access the test cases [here](https://github.com/MarcusCWD/Cakeeey-front/blob/mai
     * Used for backend. Object-Relational Mapping
 * [db migrate](https://www.npmjs.com/package/db-migrate)
     * Used for backend to create migration files 
+    
+## Deployment
+* [Hertzner](https://www.hetzner.com/)
+    * Cloud hosting & Firewall of VPS
+    * PM2 instance manager
+    * Nginx Web Server (gateway)
+    * Linux based OS
 
 ## Credits
 
