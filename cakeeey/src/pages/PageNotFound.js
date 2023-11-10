@@ -5,7 +5,7 @@ export default function PageNotFound() {
 
 
     return (
-        <section className="py-20" style={{ minHeight: "570px" }} >
+        <section className="py-20" style={{ minHeight: "700px" }} >
             <div style={{ height: "50px" }}></div>
             <div className="position-relative container">
                 <div className="position-relative mw-4xl mx-auto">
