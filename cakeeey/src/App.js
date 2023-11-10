@@ -52,7 +52,7 @@ class App extends React.Component {
                 <div className="logoPosition py-3 increaseHover2">
                   <Link to="/">
                     <img
-                      src="/images/icon.png"
+                      src={require("./images/icon.png")}
                       height="110px"
                       width="110px"
                     ></img>
@@ -63,7 +63,7 @@ class App extends React.Component {
                 <div className="iconPosition">
                   <a href='#' onClick={this.searchDrop} className="p-1">
                     <img
-                      src="/images/search.png"
+                      src={require("./images/search.png")}
                       height="25px"
                       width="25px"
                       className="increaseHover2"
@@ -71,7 +71,7 @@ class App extends React.Component {
                   </a>
                   <Link className="p-1" to="/cart" >
                     <img
-                      src="/images/cart.png"
+                      src={require("./images/cart.png")}
                       height="25px"
                       width="25px"
                       className="increaseHover2"
@@ -79,7 +79,7 @@ class App extends React.Component {
                   </Link>
                   <Link className="p-1" to="/profile">
                     <img
-                      src="/images/user.png"
+                      src={require("./images/user.png")}
                       height="25px"
                       width="25px"
                       className="increaseHover2"
@@ -130,7 +130,7 @@ class App extends React.Component {
           <p className=" d-flex justify-content-right p-2">
             <a href="https://twitter.com/">
               <img
-                src="./images/twitter.png"
+                src={require("./images/twitter.png")}
                 style={{ width: "25px" }}
                 className="m-2"
                 alt="twitter"
@@ -139,7 +139,7 @@ class App extends React.Component {
          
             <a href="https://www.facebook.com/">
               <img
-                src="./images/facebook.png"
+                src={require("./images/facebook.png")}
                 style={{ width: "25px" }}
                 className="m-2"
                 alt="facebook"
@@ -148,7 +148,7 @@ class App extends React.Component {
             
             <a href="https://www.instagram.com/">
               <img
-                src="./images/instagram.png"
+                src={require("./images/instagram.png")}
                 style={{ width: "25px" }}
                 className="m-2"
                 alt="instagram"

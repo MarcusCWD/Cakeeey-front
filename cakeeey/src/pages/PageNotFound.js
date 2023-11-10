@@ -18,7 +18,7 @@ export default function PageNotFound() {
                             <h2>Oh no. Page not found!</h2>
                             <Link to="/">
                                 <img
-                                    src="/images/withered.png"
+                                    src={require("../images/withered.png")}
                                 height="300px"
                                 // width="110px"
                                 ></img>
@@ -28,20 +28,6 @@ export default function PageNotFound() {
                 </div>
             </div>
 
-            {/* <div className="mw-lg mx-auto text-center">
-                <div className="d-inline-block h2 mb-14">
-                    <div className="logoPosition py-3 increaseHover2">
-                        <div>Oh no. Page not found!</div>
-                        <Link to="/">
-                            <img
-                                src="/images/withered.png"
-                                // height="110px"
-                                // width="110px"
-                            ></img>
-                        </Link>
-                    </div>
-                </div>
-            </div> */}
         </section>
 
     );

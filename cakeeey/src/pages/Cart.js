@@ -113,7 +113,7 @@ export default function Cart() {
                 <div className="col-2">
                   <a className="mb-1" href="#">
                   <img
-                    src="./images/close.png"
+                    src={require("../images/close.png")}
                     style={{ width: "25px" }}
                     className="m-2 increaseHover"
                     alt="close button for item in cart"
