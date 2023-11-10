@@ -1,7 +1,7 @@
 # Cakeeey.
 <img src='cakeeey/public/images/cakeeey.png' style='display:block'><br>
 
-Access the live demo of the website [here](https://cakeeey.netlify.app/).
+Access the live demo of the website [here](https://greendeeds.asia/).
 
 ## Project Summary
 
@@ -135,15 +135,13 @@ Access the test cases [here](https://github.com/MarcusCWD/Cakeeey-front/blob/mai
     * For version control
 * [GitHub](http://github.com)
     * To create repository
-* [Netlify](https://www.netlify.com/)
-    * To deploy web app
-* [Render](https://dashboard.render.com/)
-    * To deploy backend API
 
 ## Deployment
-
-The web app is hosted using Netlify.
-The back end API is hosted using Render.
+* [Hertzner](https://www.hetzner.com/)
+    * Cloud hosting & Firewall of VPS
+    * PM2 instance manager
+    * Nginx Web Server (gateway)
+    * Linux based OS
 
 **Dependencies**
 
