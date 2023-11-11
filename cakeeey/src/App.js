@@ -43,7 +43,7 @@ class App extends React.Component {
         <Router>
           <div >
              <div className="ColorMain-bg FontMain text-center">
-              From 01 May to 22 May, enjoy our special seasonal cakes! 
+              From 1 to 27 December, enjoy our special winter seasonal cakes! 
             </div>
 
 
