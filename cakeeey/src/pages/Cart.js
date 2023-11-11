@@ -13,7 +13,6 @@ export default function Cart() {
 
 
     useEffect(() => {
-        console.log("usertoken mounted");
         // if user has logout and there is no token in localstorege,
         //we have to redirect them to login page
         if (!token) {
@@ -35,12 +34,9 @@ export default function Cart() {
       // whenever the state in cart item changes, we know that the user must have modified the qty
       useEffect(() => {
         let tempTotal = 0
-        console.log(cartItems)
         for (let i of (cartItems)){
-          console.log(i.product.price)
           tempTotal = tempTotal + i.product.price * i.quantity
         }
-          console.log(tempTotal)
         setPriceTotal(tempTotal)
       }, [cartItems]);
 
@@ -49,7 +45,6 @@ export default function Cart() {
         let cloned = [...cartItems]
         cloned[productIndex].quantity += 1
         setCartItems(cloned)
-        console.log(cloned[productIndex])
         await axios.post(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity +`/update`)
       } 
       const decrementQty = async (e) => {
@@ -59,7 +54,6 @@ export default function Cart() {
           cloned[productIndex].quantity -= 1;
         }
         setCartItems(cloned)
-        console.log(cloned[productIndex])
         await axios.post(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/cart/` + tokenContext.user.id + `/` + e.target.name + `/` +cloned[productIndex].quantity + `/update`)
       } 
       const deleteItem = async (e) => {
@@ -70,7 +64,6 @@ export default function Cart() {
         setCartItems(cloned)
     }
     const redirectStripe = async () => {
-      console.log(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id)
       let response = await axios.get(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + `/api/checkout/` + tokenContext.user.id)
       window.location.replace(response.data.stripe.url);
       

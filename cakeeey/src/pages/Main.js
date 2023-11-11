@@ -7,7 +7,6 @@ export default function Main() {
   const [allCakes, setAllCakes] = useState([]);
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes")
     const fetchPost = async () => {
       const response = await axios.get(
         process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/cakes"

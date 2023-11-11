@@ -14,7 +14,6 @@ export default function Profile() {
   }
 
   useEffect(() => {
-    console.log("usertoken mounted");
     // if user has logout and there is no token in localstorege,
     //we have to redirect them to login page
     if (!token) {

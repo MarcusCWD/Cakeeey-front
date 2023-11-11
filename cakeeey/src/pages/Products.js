@@ -101,7 +101,6 @@ export default function Products() {
           {allSeasons &&
             allSeasons.map((p) => (
               <div class="tab-pane fade" id={`v-pills-${p.name}`} role="tabpanel" aria-labelledby={`v-pills-${p.name}-tab`}>
-                {console.log(p)}
               <div className="row g-2 p-2">
               {p.cakes &&
                 p.cakes.map((cakes) => (

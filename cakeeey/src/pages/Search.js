@@ -9,7 +9,6 @@ export default function Search(props) {
     const [fetchSearch, setFetchSearch] = useState([]);
     useEffect(() => {
       const getSearch = async () => {
-        // console.log(props.search)
         const response = await axios.post(
           process.env.REACT_APP_CAKEEEY_EXPRESS_URL + "/api/products/search", {
           
