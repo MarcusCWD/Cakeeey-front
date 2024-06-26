@@ -1,7 +1,7 @@
 # Cakeeey.
 <img src='cakeeey/public/images/cakeeey.png' style='display:block'><br>
 
-Access the live demo of the website [here](https://greendeeds.asia/).
+Access the live demo of the website [here](https://celeae.shop/).
 
 ## Project Summary
 
